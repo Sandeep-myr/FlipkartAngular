@@ -10,13 +10,17 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomepageComponent } from './homepage/homepage.component';
 import { SpecificProductComponent } from './specific-product/specific-product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './Customer/login/login.component';
+import { RegistrationComponent } from './Customer/registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
      NavbarComponent,
      HomepageComponent,
-     SpecificProductComponent
+     SpecificProductComponent,
+     LoginComponent,
+     RegistrationComponent
   ],
   imports: [
     BrowserModule,

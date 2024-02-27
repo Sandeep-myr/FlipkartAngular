@@ -1,0 +1,22 @@
+<div class="body">
+    <!-- <strong >{{msg}}</strong> -->
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+                <form>
+                    <input type="text" name="emailId" [(ngModel)]="customers.emailId "   placeholder="Email">
+                    <input type="password" name="password" [(ngModel)]="customers.password" placeholder="Password">
+                    <button (click)="Login()">Login</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a routerLink="/register">REGISTER</a>
+                    <a routerLink="/password">CHANGE  PASSWORD</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

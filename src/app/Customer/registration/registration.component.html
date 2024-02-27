@@ -1,0 +1,22 @@
+<div class="body">
+<section class="container">
+    <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+            <h1 class="opacity">Register</h1>
+            <form #frmRegsiter="ngForm" (submit)="register(frmRegsiter.value)">
+                <input type="text" placeholder="Customer Name" name="customerName" ngModel required #customerName="ngModel" required>
+                <input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" placeholder="Customer Email" name="emailId" ngModel #emailId="ngModel" required>
+                <input type="password" minlength="8" placeholder="Password" name="password" ngModel #password="ngModel" required>
+                <input type="text" pattern="\d{10}" placeholder="Mobile" name="mobileNumber" ngModel #mobileNumber="ngModel" required>
+                <button class="opacity" [disabled]="frmRegsiter.invalid">Register</button>
+            </form>
+            <div class="register-forget opacity">
+                <a routerLink="/login">LOGIN</a>
+                <a href="">FORGOT PASSWORD</a>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
