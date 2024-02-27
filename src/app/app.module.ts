@@ -16,6 +16,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CustomerOrderComponent } from './customer-order/customer-order.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
    AdminDashboardComponent,
    AdminLoginComponent,
    MainDashboardComponent,
-   RegistrationComponent
+   RegistrationComponent,
+   CustomerOrderComponent
 
   ],
   imports: [
