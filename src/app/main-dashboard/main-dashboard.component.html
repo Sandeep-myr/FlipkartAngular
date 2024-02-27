@@ -1,0 +1,27 @@
+
+
+
+<div class="navbar">
+    <div class="navbar-brand">
+    <img src="assets/flipkart.png" alt="Flipkart Logo">
+    </div>
+    <div class="navbar-buttons">
+      <button (click)="addProduct()" routerLink="/admin-dashboard" >Add Product</button>
+      <button (click)="logout()" routerLink="/login">Logout</button>
+      <button (click)="goToCart()">View Cart</button>
+    </div>
+  </div>
+  <form>
+  <div *ngIf="selectedCategory" class="category-form">
+    <select [(ngModel)]="selectedCategory">
+      <option *ngFor="let category of categoryList" [value]="category">{{ category }}</option>
+    </select>
+    <button type="button">Select</button>
+  </div>
+</form>
+
+  
+  <div class="container">
+    <h1>Welcome to the Dashboard</h1>
+    <p>This is your dashboard content. You can customize it as needed.</p>
+  </div>

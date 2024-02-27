@@ -1,0 +1,37 @@
+<div id="adminInfo" ng-controller="AdminController">
+  <h2>Admin Information</h2>
+  <form id="adminForm" (ngSubmit)="saveAdmin()">
+    <label for="adminName">Admin Name:</label>
+    <input type="text" id="adminName" name="adminName" [(ngModel)]="admin.adminName"><br><br>
+    
+    <fieldset>
+      <legend>Admin Address</legend>
+      <label for="address1">Permanent Address:</label><br>
+      <input type="text" id="address1Street" name="address1Street" placeholder="Street" [(ngModel)]="admin.adminAddresses[0].street"><br>
+      <input type="text" id="address1City" name="address1City" placeholder="City" [(ngModel)]="admin.adminAddresses[0].city"><br>
+      <input type="text" id="address1State" name="address1State" placeholder="State" [(ngModel)]="admin.adminAddresses[0].state"><br>
+      <input type="text" id="address1Country" name="address1Country" placeholder="Country" [(ngModel)]="admin.adminAddresses[0].country"><br>
+      <input type="text" id="address1ZipCode" name="address1ZipCode" placeholder="Zip Code" [(ngModel)]="admin.adminAddresses[0].zipCode"><br><br>
+      
+      <label for="address2">Temporary Address:</label><br>
+      <input type="text" id="address2Street" name="address2Street" placeholder="Street" [(ngModel)]="admin.adminAddresses[1].street"><br>
+      <input type="text" id="address2City" name="address2City" placeholder="City" [(ngModel)]="admin.adminAddresses[1].city"><br>
+      <input type="text" id="address2State" name="address2State" placeholder="State" [(ngModel)]="admin.adminAddresses[1].state"><br>
+      <input type="text" id="address2Country" name="address2Country" placeholder="Country" [(ngModel)]="admin.adminAddresses[1].country"><br>
+      <input type="text" id="address2ZipCode" name="address2ZipCode" placeholder="Zip Code" [(ngModel)]="admin.adminAddresses[1].zipCode"><br><br>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Admin Contacts</legend>
+      <label for="contact1">Primary Contact:</label><br>
+      <input type="text" id="contact1Mobile" name="contact1Mobile" placeholder="Mobile Number" [(ngModel)]="admin.adminContacts[0].mobileNumber"><br>
+      <input type="email" id="contact1Email" name="contact1Email" placeholder="Email" [(ngModel)]="admin.adminContacts[0].emailId"><br><br>
+      
+      <label for="contact2">Alternative Contact:</label><br>
+      <input type="text" id="contact2Mobile" name="contact2Mobile" placeholder="Mobile Number" [(ngModel)]="admin.adminContacts[1].mobileNumber"><br>
+      <input type="email" id="contact2Email" name="contact2Email" placeholder="Email" [(ngModel)]="admin.adminContacts[1].emailId"><br><br>
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

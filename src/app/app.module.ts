@@ -12,6 +12,10 @@ import { SpecificProductComponent } from './specific-product/specific-product.co
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Customer/login/login.component';
 import { RegistrationComponent } from './Customer/registration/registration.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,19 @@ import { RegistrationComponent } from './Customer/registration/registration.comp
      HomepageComponent,
      SpecificProductComponent,
      LoginComponent,
-     RegistrationComponent
+     RegistrationComponent,
+   AdminDashboardComponent,
+   AdminLoginComponent,
+   MainDashboardComponent,
+   RegistrationComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, // Add FormsModule here
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
  
   ],
   providers: [

@@ -1,0 +1,51 @@
+/* Custom CSS for logo */
+.navbar-brand img {
+    height: 60px; 
+    width: auto; 
+    border-radius: 50%; 
+    border: 2px solid #007bff; 
+    padding: 5px; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+  /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand img {
+    height: 40px; 
+  }
+  
+  .navbar-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #28a745; 
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .navbar-buttons button:hover {
+    background-color: #218838;
+  }
+  
+  /* Container */
+  .container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .container h1 {
+    color: #696666; 
+  }
+  
+  .container p {
+    color: #555; 
+  }
+  
