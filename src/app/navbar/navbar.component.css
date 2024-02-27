@@ -1,0 +1,38 @@
+
+.navbar {
+  background-color: #007bff !important; /* Blue background color */
+}
+
+.navbar-brand {
+  color: yellow !important; /* Yellow color for Flipkart name */
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.search-box {
+  display: flex;
+  
+
+  align-items: center;
+  margin-left: auto; /* Push search box to the right */
+}
+
+.search-box input {
+  width: 500px; /* Adjust width as needed */
+  margin-right: 10px; /* Add margin to the right of the search box for spacing */
+}
+
+@media (max-width: 991.98px) {
+  .search-box {
+      margin-left: auto; /* Push search box to the right on medium and small devices */
+      text-align: right; /* Align search button to the right */
+  }
+  .navbar-brand {
+      display: flex;
+      justify-content: center;
+      width: 100%; /* Make the navbar-brand take full width on smaller devices */
+  }
+
+  .navbar-brand span {
+      margin-right: auto; /* Push the span to the left on smaller devices */
+  }
+}

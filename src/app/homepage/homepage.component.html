@@ -1,0 +1,38 @@
+<div class="container" class="main">
+  <div class="row" class="productdiv">
+    <div class="col-md-8 mb-4" *ngFor="let product of products">
+      <div class="withbtn">
+        <div class="product">
+  
+          <a [routerLink]="['/specific-product', product.productId]">
+
+
+            <div class="img-div">
+              <img class="card-img-top" [src]="product.imageUrl" alt="Product Image">
+            </div>
+
+            <div class="discount">{{ product.discountPercentage }}% off</div>
+
+            <div class="card-holder">
+              <h5 class="card-title"><strong>{{ product.productName }}</strong></h5>
+              <p class="card-text">{{ product.description | slice:0:20}}...</p>
+              <p class="card-text">Seller: {{ product.seller }}</p>
+              <p class="card-text">Brand: {{ product.brandName }}</p>
+              <p class="card-text">Price: <span class="actual-price">&#8377;{{ product.productPrice }}</span>
+                <br>
+                <span class="discount-price">&#8377;{{ product.productPrice- (product.productPrice*
+                  product.discountPercentage)/100}}</span>
+              </p>
+
+
+            </div>
+          </a>
+      
+
+        </div>
+        <button class="btn btn-warning btn-block" (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</div>
