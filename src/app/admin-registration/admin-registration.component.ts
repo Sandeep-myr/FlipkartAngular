@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { RegistrationServiceService } from '../service/registration-service.service';
 
 import { error } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-registration',

@@ -14,14 +14,14 @@
             <div class="discount">{{ product.discountPercentage }}% off</div>
 
             <div class="card-holder">
-              <h5 class="card-title"><strong>{{ product.productName }}</strong></h5>
+              <h5 class="card-title"><strong>{{ product.productName |slice:0:20}}...</strong></h5>
               <p class="card-text">{{ product.description | slice:0:20}}...</p>
               <p class="card-text">Seller: {{ product.seller }}</p>
-              <p class="card-text">Brand: {{ product.brandName }}</p>
+              <p class="card-text">Brand: {{ product.brandName|slice:0:20 }}..</p>
               <p class="card-text">Price: <span class="actual-price">&#8377;{{ product.productPrice }}</span>
                 <br>
-                <span class="discount-price">&#8377;{{ product.productPrice- (product.productPrice*
-                  product.discountPercentage)/100}}</span>
+                <span class="discount-price">&#8377;{{ (product.productPrice- (product.productPrice*
+                  product.discountPercentage)/100).toFixed(2)  }}</span>
               </p>
 
 

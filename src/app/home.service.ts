@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
 
-  fetchSpecificProductUrl:string="http://localhost:8080/flipkart/productById";
+  fetchSpecificProductUrl:string="http://localhost:8083/flipkart/productById";
   constructor(private http:HttpClient) { }
 
   fetchSpecificProduct(productid:any):Observable<any>{

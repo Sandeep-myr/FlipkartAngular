@@ -5,10 +5,11 @@ import { RegistrationServiceService } from '../service/registration-service.serv
 import { error } from 'console';
 import { HttpParams,HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
-  styleUrl: './admin-login.component.css'
+  styleUrls: ['./admin-login.component.css'] 
 })
 export class AdminLoginComponent {
 
@@ -43,16 +44,6 @@ admin:any;
     console.log(error);
   });
 
-
-     
-        
-    
-        
-        
-        
-
-
-   
   }
 
   }

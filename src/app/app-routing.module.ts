@@ -10,13 +10,16 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
+import { AppComponent } from './app.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'specific-product/:productId',component:SpecificProductComponent},
   
- 
+  
+ {path:'change-password',component:ChangePasswordComponent},
 
   {path:"register",component:RegistrationComponent},
   {path:"login",component:LoginComponent},

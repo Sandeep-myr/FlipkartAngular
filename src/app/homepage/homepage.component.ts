@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
   constructor(private http: HttpClient, private specificProduct: SpecificProductComponent, private route: Router) { }
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/flipkart/all/product', { responseType: 'json' }).subscribe((data: any) => {
+    this.http.get('http://localhost:8083/flipkart/all/product', { responseType: 'json' }).subscribe((data: any) => {
       this.products = data;
     }, error => {
       console.log(error);

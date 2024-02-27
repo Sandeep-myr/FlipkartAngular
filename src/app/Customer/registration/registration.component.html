@@ -4,6 +4,11 @@
         <div class="circle circle-one"></div>
         <div class="form-container">
             <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+            <div class="alert alert-success" *ngIf="status">
+                <strong>
+                    {{msg}}
+                </strong>
+            </div>
             <h1 class="opacity">Register</h1>
             <form #frmRegsiter="ngForm" (submit)="register(frmRegsiter.value)">
                 <input type="text" placeholder="Customer Name" name="customerName" ngModel required #customerName="ngModel" required>

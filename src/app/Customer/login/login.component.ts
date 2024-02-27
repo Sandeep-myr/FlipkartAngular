@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerApiService } from '../../customer-api.service';
-// import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { json } from 'stream/consumers';
 
 @Component({
   selector: 'app-login',
@@ -14,23 +12,47 @@ export class LoginComponent implements OnInit
 
   customers=
   {
-    emailId:'',
-    password:''
+    
+    password:'',
+   mobileNumber:''
   }
   CustomerDetails:any;
+msg: any;
+status: boolean=false;
 
 
   constructor(private loginService:CustomerApiService, private router:Router){}
-
+  email:any='';
   customer:any;
+  mobileNumber:any;
   Login()
   {
-    return this.loginService.LoginCustomer(this.customers.emailId,this.customers.password).subscribe((data:any)=>
+
+    this.email=this.customers.mobileNumber
+    console.log(this.customers)
+  if(this.email.match('@')){
+this.mobileNumber=null
+  }else{
+this.mobileNumber=this.customers.mobileNumber;
+this.email=null
+  }
+
+    return this.loginService.LoginCustomer(this.email,this.customers.password,this.mobileNumber).subscribe((data:any)=>
     {
       this.customer=JSON.stringify(data);
       sessionStorage.setItem('customer',this.customer);
-      this.router.navigate(['/register']);
-    })
+      setTimeout(()=>{
+        this.status=false;
+            },9000)
+  
+    },error=>{
+this.status=true;
+this.msg=error.error.message;
+setTimeout(()=>{
+  this.status=false;
+      },9000)
+    });
+    
   }
 
   ngOnInit(): void {
