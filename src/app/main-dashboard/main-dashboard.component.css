@@ -39,13 +39,55 @@
   .container {
     margin-top: 20px;
     text-align: center;
+ 
   }
   
   .container h1 {
-    color: #696666; 
+    color:#218838; 
+    text-decoration: #0056b3;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
-  
-  .container p {
-    color: #555; 
-  }
-  
+
+  /* Set global styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* Style form fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style button */
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #0a4482;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: Add additional styling as needed */

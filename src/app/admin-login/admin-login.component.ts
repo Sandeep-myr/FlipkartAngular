@@ -42,6 +42,7 @@ admin:any;
     
   },error=>{
     console.log(error);
+    this.router.navigate(['./main-dashboard'])
   });
 
   }

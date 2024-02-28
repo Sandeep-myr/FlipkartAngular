@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
+import { text } from 'stream/consumers';
 
 
 
@@ -8,26 +9,41 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistrationServiceService {
+  fetchCategoryList():Observable<any> {
+  return   this.http.get('http://localhost:8083/flipkart/product/allCategory',{responseType:'json'}).pipe(
+      catchError(error=>{
+        return throwError(error);
+      })
+    )
+  }
 
- saveUrl="http://localhost:8080/flipkart/adminreg";
- loginUrl="http://localhost:8080/flipkart/adminLogin";
- 
- addProdUrl="http://localhost:8080/flipkart/addProduct";
+ saveUrl="http://localhost:8083/flipkart/adminreg";
+ loginUrl="http://localhost:8083/flipkart/adminLogin";
+ addProdUrl="http://localhost:8083/flipkart/addProduct";
+ viewCartUrl="http://localhost:8080/flipkart/viewcart";
 
 
   constructor(private http:HttpClient){
 
    
   }
+  
   public registerAdmin(data:any):Observable<any>{
     return this.http.post(`${this.saveUrl}`,data,{responseType:'text'});
   }
+
   public loginAdmin(emailId:string,password:string):Observable<any>{
 
-    return this.http.get('http://localhost:8080/flipkart/adminLogin?emailId='+emailId+'&password='+password);
+    return this.http.get('http://localhost:8083/flipkart/adminLogin?emailId='+emailId+'&password='+password);
   }
+
   public addProducts(data:any):Observable<any>{
-    return this.http.post(`${this.addProdUrl}`,data);
+    return this.http.post(`${this.addProdUrl}`,data ,{responseType:'text'});
+  }
+ 
+
+  public viewCart(emailId:string):Observable<any>{
+    return this.http.get(`${this.viewCartUrl}`,{responseType:'text'});
   }
 
 

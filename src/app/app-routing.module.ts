@@ -12,6 +12,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,7 @@ const routes: Routes = [
   {path:'specific-product/:productId',component:SpecificProductComponent},
   
   
- {path:'change-password',component:ChangePasswordComponent},
+  {path:'change-password',component:ChangePasswordComponent},
 
   {path:"register",component:RegistrationComponent},
   {path:"login",component:LoginComponent},
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path: 'main-dashboard',
     component: MainDashboardComponent,
+  },
+  // {
+  //   path:'addtocart',
+  //   component:AddToCartComponent,
+  // },
+  {
+    path:'viewcart',
+    component:ViewcartComponent,
   },
   {
     path: 'admin-dashboard',

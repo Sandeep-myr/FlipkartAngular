@@ -20,8 +20,12 @@ import { CustomerOrderComponent } from './customer-order/customer-order.componen
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './Customer/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+import { AddtocartComponent } from './addtocart/addtocart.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +41,18 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
    RegistrationComponent,
    CustomerOrderComponent,
    AddToCartComponent,
-   ChangePasswordComponent
+   ChangePasswordComponent,
+   AdminRegistrationComponent,
+   ViewcartComponent,
+   AddtocartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-     FormsModule,
+    FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    
+    RouterModule
  
   ],
   providers: [
