@@ -9,6 +9,7 @@ import { text } from 'stream/consumers';
   providedIn: 'root'
 })
 export class RegistrationServiceService {
+ 
   fetchCategoryList():Observable<any> {
   return   this.http.get('http://localhost:8083/flipkart/product/allCategory',{responseType:'json'}).pipe(
       catchError(error=>{
@@ -27,7 +28,15 @@ export class RegistrationServiceService {
 
    
   }
-  
+ 
+  addProduct(product: any,emailId:string):Observable<any> {
+    return this.http.post(this.addProdUrl+'?emailId='+emailId,product,{responseType:'text'}).pipe(
+      catchError(error=>{
+        return throwError(error);
+      })
+    )
+  }
+
   public registerAdmin(data:any):Observable<any>{
     return this.http.post(`${this.saveUrl}`,data,{responseType:'text'});
   }

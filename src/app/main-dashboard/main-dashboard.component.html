@@ -1,96 +1,62 @@
-
-
 <!-- Button trigger modal -->
-
-
 <div class="navbar">
-    <div class="navbar-brand">
+  <div class="navbar-brand">
     <img src="assets/flipkart.png" alt="Flipkart Logo">
-    </div>
-    <div class="navbar-buttons">
-      <button (click)="openForm()">Add Product</button>
-      <button (click)="logout()" routerLink="/login">Logout</button>
-      <button (click)="goToCart()">View Cart</button>
-    </div>
   </div>
-  <form>
-  <div *ngIf="selectedCategory" class="category-form">
-    <select [(ngModel)]="selectedCategory">
-      <option *ngFor="let category of categoryList" [value]="category">{{ category }}</option>
-    </select>
-    <button type="button">Select</button>
+  <div class="navbar-buttons">
+    <button class="btn btn-primary" (click)="openForm()">Add Product</button>
+    <button class="btn btn-danger" (click)="logout()" routerLink="/login">Logout</button>
+    <button class="btn btn-info" (click)="goToCart()">View Cart</button>
   </div>
-</form>
-
-  
+</div>
+<form>
   <div class="container">
     <h1>Welcome to the Dashboard</h1>
-    
   </div>
 
   <div *ngIf="open">
-         <div class="container-fluid">
-    <label for="categoryNameModal" >Select Category</label>
-    <select  [(ngModel)]="categoryChoose" >
-     <option *ngFor="let category of categoryLists">{{category.categoryName}}</option>
-      <option (click)="openCategoryForm()">other</option>
-   
+    <div class="categorydiv">
+      <label for="categoryNameModal">Select Category</label>
+      <select name="selectedCategory" [(ngModel)]="selectedCategory" required aria-label="Select Category">
+        <option *ngFor="let category of categoryLists" [ngValue]="category.categoryName">{{category.categoryName}}</option>
+        <option value="other">Other</option>
     </select>
+    </div>
+
+    <div class="product-details">
+      <div class="container">
+        <h3>Product Details</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div *ngIf="selectedCategory==='other'">
+              <label for="categoryName">Category Name:</label>
+              <input type="text" placeholder="Enter Category Name" name="categoryName" [(ngModel)]="this.product.categoryList[0].categoryName">
+            </div>
+            <label for="productNameModal">Product Name:</label>
+            <input type="text" id="productNameModal" placeholder="Enter Product Name" name="productNameModal" [(ngModel)]="this.product.categoryList[0].productList[0].productName" required>
+
+            <label for="brandNameModal">Brand Name:</label>
+            <input type="text" id="brandNameModal" name="brandNameModal" [(ngModel)]="this.product.categoryList[0].productList[0].brandName" required>
+
+            <label for="productQtyModal">Quantity:</label>
+            <input type="number" id="productQtyModal" name="productQtyModal" [(ngModel)]="this.product.categoryList[0].productList[0].productQty" required>
+          </div>
+          <div class="col-md-6">
+            <label for="productPriceModal">Price:</label>
+            <input type="number" id="productPriceModal" name="productPriceModal" [(ngModel)]="this.product.categoryList[0].productList[0].productPrice" required>
+
+            <label for="discountPercentageModal">Discount Percentage:</label>
+            <input type="number" id="discountPercentageModal" name="discountPercentageModal" [(ngModel)]="this.product.categoryList[0].productList[0].discountPercentage">
+
+            <label for="descriptionModal">Description:</label>
+            <textarea id="descriptionModal" name="descriptionModal" [(ngModel)]="this.product.categoryList[0].productList[0].description" required></textarea>
+
+            <label for="imageUrlModal">Image URL:</label>
+            <input type="text" id="imageUrlModal" name="imageUrlModal" [(ngModel)]="this.product.categoryList[0].productList[0].imageUrl" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" (click)="saveProduct()" routerLink="/addToCart" data-target="#addCategoryProductModal">Add</button>
+      </div>
+    </div>
   </div>
-    
-    <div *ngIf="other">
-      <input type="text" placeholder="Enter Category Name" >
-     </div>
-  
-    <div *ngFor="let product of categoryList.productList; let i = index">
-
-   <div class="container">
-     <h3>Product Details</h3>
-    <div class="row">
-     <div classs="col-md-6">
-      <label for="productNameModal{{i}}">Product Name:</label>
-    <input type="text" id="productNameModal{{i}}" name="productNameModal{{i}}" [(ngModel)]="product.productName" required><br><br>
-
-
- 
-    <label for="brandNameModal{{i}}">Brand Name:</label>
-    <input type="text" id="brandNameModal{{i}}" name="brandNameModal{{i}}" [(ngModel)]="product.brandName" required><br><br>
-  
-    <label for="productQtyModal{{i}}">Quantity:</label>
-    <input type="number" id="productQtyModal{{i}}" name="productQtyModal{{i}}" [(ngModel)]="product.productQty" required><br><br>
- </div>
-
-  <div classs="col-md-6">
-  
-    <label for="productPriceModal{{i}}">Price:</label>
-    <input type="number" id="productPriceModal{{i}}" name="productPriceModal{{i}}" [(ngModel)]="product.productPrice" required><br><br>
-
-
-    <label for="discountPercentageModal{{i}}">Discount Percentage:</label>
-    <input type="number" id="discountPercentageModal{{i}}" name="discountPercentageModal{{i}}" [(ngModel)]="product.discountPercentage"><br><br>
-
-    <label for="descriptionModal{{i}}">Description:</label>
-    <textarea id="descriptionModal{{i}}" name="descriptionModal{{i}}" [(ngModel)]="product.description" required></textarea><br><br>
-
-    <label for="imageUrlModal{{i}}">Image URL:</label>
-    <input type="text" id="imageUrlModal{{i}}" name="imageUrlModal{{i}}" [(ngModel)]="product.imageUrl" required><br><br>
-  </div>
-  
-</div>
-<button type="submit" class="btn btn-primary" data-toggle="modal" (click)="submitForm()" routerLink="/addToCart" data-target="#addCategoryProductModal">Add
-     
-    </button>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-   
+</form>

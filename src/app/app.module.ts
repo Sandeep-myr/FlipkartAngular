@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './Customer/registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
-import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CustomerOrderComponent } from './customer-order/customer-order.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
@@ -26,6 +26,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { ViewcartComponent } from './viewcart/viewcart.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 
 @NgModule({
   declarations: [
