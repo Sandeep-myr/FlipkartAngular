@@ -4,7 +4,7 @@
           <span style="font-family: 'Arial Black', Gadget, sans-serif;">Flipkart</span>
       </a>
       <div class="search-box">
-          <input class="form-control mr-sm-2"  (input)="search()"  [(ngModel)]="searchKey" type="search" placeholder="Search Arial...." aria-label="Search">
+          <input class="form-control mr-sm-2"  (input)="search()" name="fghn"  [(ngModel)]="searchKey" type="search" placeholder="Search Arial...." aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:grey;color:white" >Search</button>
          <div>
             <a [routerLink]="['/specific-product']"  >

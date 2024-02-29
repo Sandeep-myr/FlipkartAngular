@@ -20,6 +20,7 @@ categories: any;
   }
 
   public products: any;
+ 
 
   constructor(private http: HttpClient, private specificProduct: SpecificProductComponent, private route: Router) { }
   ngOnInit(): void {

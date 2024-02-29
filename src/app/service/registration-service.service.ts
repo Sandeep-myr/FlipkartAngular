@@ -21,15 +21,13 @@ export class RegistrationServiceService {
  saveUrl="http://localhost:8083/flipkart/adminReg";
  loginUrl="http://localhost:8083/flipkart/adminLogin";
  addProdUrl="http://localhost:8083/flipkart/addProduct";
- viewCartUrl="http://localhost:8080/flipkart/viewcart";
+ viewCartUrl="http://localhost:8083/flipkart/viewcart";
 
 
   constructor(private http:HttpClient){
 
    
   }
-<<<<<<< HEAD
-=======
  
   addProduct(product: any,emailId:string):Observable<any> {
     return this.http.post(this.addProdUrl+'?emailId='+emailId,product,{responseType:'text'}).pipe(
@@ -38,7 +36,6 @@ export class RegistrationServiceService {
       })
     )
   }
->>>>>>> 033479a928c0051b18bb1a4bdd850fea245a7253
 
   public registerAdmin(data:any):Observable<any>{
     return this.http.post(`${this.saveUrl}`,data,{responseType:'text'});
