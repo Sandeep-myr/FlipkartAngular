@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import path from 'path';
 import { SpecificProductComponent } from './specific-product/specific-product.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './Customer/login/login.component';
 import { RegistrationComponent } from './Customer/registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-;
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ViewcartComponent } from './viewcart/viewcart.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
-
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -49,10 +45,7 @@ const routes: Routes = [
   //   path:'addtocart',
   //   component:AddToCartComponent,
   // },
-  {
-    path:'viewcart',
-    component:ViewcartComponent,
-  },
+
   {
     path: 'admin-dashboard',
     component: AdminDashboardComponent,

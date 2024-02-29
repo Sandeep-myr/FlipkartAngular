@@ -24,9 +24,10 @@ import { FormsModule } from '@angular/forms';
 
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
-import { ViewcartComponent } from './viewcart/viewcart.component';
+
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,9 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
    AddToCartComponent,
    ChangePasswordComponent,
    AdminRegistrationComponent,
-   ViewcartComponent,
-   AddtocartComponent
+ 
+   AddtocartComponent,
+      SearchComponent
   ],
   imports: [
     BrowserModule,

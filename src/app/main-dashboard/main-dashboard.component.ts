@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationServiceService } from '../service/registration-service.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { error } from 'console';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -14,6 +15,8 @@ goToCart() {
 
 }
 logout() {
+  alert('You Logged out ');
+  return this.router.navigate(['./adminlogin']);
 
 }
 
@@ -23,34 +26,19 @@ logout() {
   categoryLists: any;
   category: any;
 
-
-
-
- 
-
   openForm() {
     this.categoryListName();
     this.open = true;
   }
-  // showCategoryForm: boolean = false;
 
-
-
-
-  
-  constructor(
+constructor(
     private service: RegistrationServiceService,
     private router: Router,
     private formBuilder: FormBuilder
   ) { }
 
   
-
-
-
-
-
-  product = {
+product = {
     categoryList:[{
     categoryName: '',
     productList:[
@@ -88,7 +76,9 @@ logout() {
 
         return this.router.navigate(['./main-dashboard']);
       },
-      (error) => console.log(error)
+      error =>{
+        console.log(error)
+      } 
     );
   }
 
@@ -102,7 +92,11 @@ logout() {
   }
 
   //---------------------------------------------------------------------------------------
+ 
+  getProductByID(){
+   
 
+  }
 
 
 

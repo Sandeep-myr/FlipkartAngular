@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.navbar-brand img {
+  width: 100px; /* Adjust as needed */
+}
+
 .navbar-buttons button {
   margin-left: 10px;
 }

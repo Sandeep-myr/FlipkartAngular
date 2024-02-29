@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable, Injector, OnInit } from '@angular/core';
+import { Component, Injectable, Injector, OnInit, Output } from '@angular/core';
 import { SpecificProductComponent } from '../specific-product/specific-product.component';
 import { Router } from '@angular/router';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -26,6 +27,16 @@ export class HomepageComponent implements OnInit {
     });
 
   }
+
+  courseCountRadioButton : string='All';
+  searchText: string='';
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
+
+  }
+  
   // fetchSpecific(productId: any) {
   //   this.specificProduct.fetchSepecificProduc(productId);
   //   this.route.navigate(['./specifyProduct']);

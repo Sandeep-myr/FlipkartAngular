@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+
 <div class="container" class="main">
   <div class="row" class="productdiv">
     <div class="col-md-8 mb-4" *ngFor="let product of products">
@@ -24,6 +26,8 @@
                 <span class="discount-price">&#8377;{{ (product.productPrice- (product.productPrice*
                   product.discountPercentage)/100).toFixed(2)  }}</span>
               </p>
+
+             
 
 
             </div>

@@ -18,9 +18,10 @@
     <div class="categorydiv">
       <label for="categoryNameModal">Select Category</label>
       <select name="selectedCategory" [(ngModel)]="selectedCategory" required aria-label="Select Category">
-        <option *ngFor="let category of categoryLists" [ngValue]="category.categoryName">{{category.categoryName}}</option>
+        <option *ngFor="let category of categoryLists" [ngValue]="category.categoryName">{{category.categoryName}}
+        </option>
         <option value="other">Other</option>
-    </select>
+      </select>
     </div>
 
     <div class="product-details">
@@ -30,32 +31,45 @@
           <div class="col-md-6">
             <div *ngIf="selectedCategory==='other'">
               <label for="categoryName">Category Name:</label>
-              <input type="text" placeholder="Enter Category Name" name="categoryName" [(ngModel)]="this.product.categoryList[0].categoryName">
+              <input type="text" placeholder="Enter Category Name" name="categoryName"
+                [(ngModel)]="this.product.categoryList[0].categoryName">
+
+
             </div>
             <label for="productNameModal">Product Name:</label>
-            <input type="text" id="productNameModal" placeholder="Enter Product Name" name="productNameModal" [(ngModel)]="this.product.categoryList[0].productList[0].productName" required>
+            <input type="text" id="productNameModal" placeholder="Enter Product Name" name="productNameModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].productName" required>
 
             <label for="brandNameModal">Brand Name:</label>
-            <input type="text" id="brandNameModal" name="brandNameModal" [(ngModel)]="this.product.categoryList[0].productList[0].brandName" required>
+            <input type="text" id="brandNameModal" name="brandNameModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].brandName" required>
 
             <label for="productQtyModal">Quantity:</label>
-            <input type="number" id="productQtyModal" name="productQtyModal" [(ngModel)]="this.product.categoryList[0].productList[0].productQty" required>
+            <input type="number" id="productQtyModal" name="productQtyModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].productQty" required>
           </div>
+
           <div class="col-md-6">
             <label for="productPriceModal">Price:</label>
-            <input type="number" id="productPriceModal" name="productPriceModal" [(ngModel)]="this.product.categoryList[0].productList[0].productPrice" required>
+            <input type="number" id="productPriceModal" name="productPriceModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].productPrice" required>
 
             <label for="discountPercentageModal">Discount Percentage:</label>
-            <input type="number" id="discountPercentageModal" name="discountPercentageModal" [(ngModel)]="this.product.categoryList[0].productList[0].discountPercentage">
+            <input type="number" id="discountPercentageModal" name="discountPercentageModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].discountPercentage">
 
             <label for="descriptionModal">Description:</label>
-            <textarea id="descriptionModal" name="descriptionModal" [(ngModel)]="this.product.categoryList[0].productList[0].description" required></textarea>
+            <textarea id="descriptionModal" name="descriptionModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].description" required></textarea>
 
             <label for="imageUrlModal">Image URL:</label>
-            <input type="text" id="imageUrlModal" name="imageUrlModal" [(ngModel)]="this.product.categoryList[0].productList[0].imageUrl" required>
+            <input type="text" id="imageUrlModal" name="imageUrlModal"
+              [(ngModel)]="this.product.categoryList[0].productList[0].imageUrl" required>
           </div>
+
         </div>
-        <button type="submit" class="btn btn-primary" data-toggle="modal" (click)="saveProduct()" routerLink="/addToCart" data-target="#addCategoryProductModal">Add</button>
+        <button type="submit" class="btn btn-success" data-toggle="modal" (click)="saveProduct()"
+          routerLink="/addToCart" data-target="#addCategoryProductModal">Add</button>
       </div>
     </div>
   </div>

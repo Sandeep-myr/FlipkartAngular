@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
+import  {catchError} from 'rxjs/operators'
+import { Observable,  throwError } from 'rxjs';
 import { text } from 'stream/consumers';
 
 
@@ -21,10 +22,12 @@ export class RegistrationServiceService {
  saveUrl="http://localhost:8083/flipkart/adminreg";
  loginUrl="http://localhost:8083/flipkart/adminLogin";
  addProdUrl="http://localhost:8083/flipkart/addProduct";
- viewCartUrl="http://localhost:8080/flipkart/viewcart";
+ viewCartUrl="http://localhost:8083/flipkart/viewcart";
+ getproductById="http://localhost:8083/flipkart/productById";
 
 
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient)
+  {
 
    
   }
@@ -53,6 +56,10 @@ export class RegistrationServiceService {
 
   public viewCart(emailId:string):Observable<any>{
     return this.http.get(`${this.viewCartUrl}`,{responseType:'text'});
+  }
+  public getProductById(productId:number):Observable<any>{
+    return this.http.get(`${this.getproductById}`,{responseType:'json'});
+
   }
 
 
