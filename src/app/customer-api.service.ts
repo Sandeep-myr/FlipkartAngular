@@ -39,13 +39,8 @@ export class CustomerApiService
       );
   
     }
-
-
-
  
   }
-
-
 
   changePassword(email: any, oldPassword: any, newPassword: any):Observable<string> {
     console.log(email,oldPassword,newPassword)
@@ -62,9 +57,5 @@ export class CustomerApiService
     })
   )
   }
-
-
-
-
 }
 

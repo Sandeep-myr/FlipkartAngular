@@ -8,23 +8,25 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css',
 })
-export class MainDashboardComponent implements OnInit {
-other: boolean=false;
-categoryChoose: string='';
+export class MainDashboardComponent {
+selectedCategory: any;
+goToCart() {
 
-openCategoryForm() {
-  
-this.other=true;
+}
+logout() {
+
 }
 
-
-  categoryLists: any;
-
-  submitForm() {
-    this.open = false;
-    alert('Product added successfully');
-  }
+  categoryChoose: any;
+  categoryName: any;
   open: boolean = false;
+  categoryLists: any;
+  category: any;
+
+
+
+
+ 
 
   openForm() {
     this.categoryListName();
@@ -33,26 +35,26 @@ this.other=true;
   // showCategoryForm: boolean = false;
 
 
-  selectedCategory: string = '';
-  category: any;
 
-  productForm!: FormGroup;
+
+  
   constructor(
     private service: RegistrationServiceService,
     private router: Router,
     private formBuilder: FormBuilder
-  ) {}
-  goToCart() {}
-  logout() {
-    alert('Now you logged Out');
-    console.log('logged out');
-    
-  }
+  ) { }
 
   
 
 
-     newProduct =[{
+
+
+
+  product = {
+    categoryList:[{
+    categoryName: '',
+    productList:[
+    {
       productName: '',
       brandName: '',
       productQty: 0,
@@ -60,39 +62,29 @@ this.other=true;
       discountPercentage: 0,
       description: '',
       imageUrl: '',
-    },];
-  
-  categoryList: any = {
-    categoryName: '',
-    productList: [
-      {
-        productName: '',
-        brandName: '',
-        productQty: 0,
-        productPrice: 0,
-        discountPercentage: 0,
-        description: '',
-        imageUrl: '',
-      },
-    ],
+    }],
+  }]
   };
-   
-  ngOnInit(): void
-   {
-  if(this.categoryChoose.match('other'))
-{
-  this.other=true;
-}
 
-  }
+
+
   //--------------------------------------------------------------------------------
 
-    saveProduct() 
-    {
-    console.log(this.categoryList);
-    return this.service.registerAdmin(this.categoryList).subscribe(
-      (data) => {
-        console.log(this.categoryList);
+  saveProduct() {
+    const adminString = sessionStorage.getItem('admin');
+    let admin;
+    
+    if (adminString !== null) {
+        admin = JSON.parse(adminString);
+    }
+    if(this.selectedCategory !== 'other'){
+      this.product.categoryList[0].categoryName=this.selectedCategory;
+    }
+    let emailId=admin.adminContacts[0].emailId;
+    console.log(this.product)
+     this.service.addProduct(this.product,emailId).subscribe(
+      (data:any) => {
+        console.log(data);
 
         return this.router.navigate(['./main-dashboard']);
       },
@@ -100,27 +92,18 @@ this.other=true;
     );
   }
 
-//-------------------------------------------------------------------------------------
-  categoryListName(){
-    this.service.fetchCategoryList().subscribe((data:any)=>{
-      this.categoryLists=data
-    },error=>{
-   console.log(error)
+  //-------------------------------------------------------------------------------------
+  categoryListName() {
+    this.service.fetchCategoryList().subscribe((data: any) => {
+      this.categoryLists = data
+    }, error => {
+      console.log(error)
     })
   }
 
   //---------------------------------------------------------------------------------------
 
-  AddProduct(){
-    return this.service.addProducts(this.newProduct).subscribe(
-      (data) =>{
-        console.log(this.newProduct);
-        return this.router.navigate(['./addtocart']);
-        
-      }
-    )
-  }
- 
+
 
 
 
