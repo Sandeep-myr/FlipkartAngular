@@ -17,7 +17,7 @@ export class RegistrationServiceService {
     )
   }
 
- saveUrl="http://localhost:8083/flipkart/adminreg";
+ saveUrl="http://localhost:8083/flipkart/adminReg";
  loginUrl="http://localhost:8083/flipkart/adminLogin";
  addProdUrl="http://localhost:8083/flipkart/addProduct";
  viewCartUrl="http://localhost:8080/flipkart/viewcart";
@@ -27,7 +27,7 @@ export class RegistrationServiceService {
 
    
   }
-  
+
   public registerAdmin(data:any):Observable<any>{
     return this.http.post(`${this.saveUrl}`,data,{responseType:'text'});
   }
