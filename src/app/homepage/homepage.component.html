@@ -1,4 +1,4 @@
-<app-navbar  ></app-navbar>
+<app-navbar></app-navbar>
 <div class="container" class="main">
 
 
@@ -6,7 +6,7 @@
     <button class="category" type="submit" (click)="ngOnInit()">All Category</button>
     <div *ngFor="let category of categories" class="category"  >
       
-      <button  type="submit" (click)="fetchSpecificCategoryProduct(category.categoryName)">{{ category.categoryName }}</button>
+      <div class="btncat" type="submit" (click)="fetchSpecificCategoryProduct(category.categoryName)">{{ category.categoryName }}</div>
       </div>
   </div>
 

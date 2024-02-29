@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HomepageComponent } from '../homepage/homepage.component';
+import { LoginComponent } from '../Customer/login/login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ import { HomepageComponent } from '../homepage/homepage.component';
 export class NavbarComponent{
 searchKey:any;
 loginbtn:boolean=true;
+openflex: any;
+open: any;
 
 
 constructor(private mains:HomepageComponent,private http:HttpClient){
