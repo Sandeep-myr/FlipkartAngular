@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { RegistrationServiceService } from '../service/registration-service.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css',
 })
+
 export class MainDashboardComponent {
 selectedCategory: any;
 goToCart() {
