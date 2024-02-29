@@ -1,5 +1,15 @@
 <app-navbar></app-navbar>
 <div class="container" class="main">
+
+
+  <div class="categories">
+    <button class="category" type="submit" (click)="ngOnInit()">All Category</button>
+    <div *ngFor="let category of categories" class="category"  >
+      
+      <button  type="submit" (click)="fetchSpecificCategoryProduct(category.categoryName)">{{ category.categoryName }}</button>
+      </div>
+  </div>
+
   <div class="row" class="productdiv">
     <div class="col-md-8 mb-4" *ngFor="let product of products">
       <div class="withbtn">
