@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import  {catchError} from 'rxjs/operators'
 import { Observable,  throwError } from 'rxjs';
@@ -23,7 +23,8 @@ export class RegistrationServiceService {
  loginUrl="http://localhost:8083/flipkart/adminLogin";
  addProdUrl="http://localhost:8083/flipkart/addProduct";
  viewCartUrl="http://localhost:8083/flipkart/viewcart";
- getproductById="http://localhost:8083/flipkart/productById";
+ addtoCartUrl="http://localhost:8083/flipkart/addToCart";
+
 
 
   constructor(private http:HttpClient)
@@ -52,15 +53,22 @@ export class RegistrationServiceService {
   public addProducts(data:any):Observable<any>{
     return this.http.post(`${this.addProdUrl}`,data ,{responseType:'text'});
   }
- 
+  // public addToCart(emailId:string,productId:number) : Observable<any>{
 
-  public viewCart(emailId:string):Observable<any>{
-    return this.http.get(`${this.viewCartUrl}`,{responseType:'text'});
-  }
-  public getProductById(productId:number):Observable<any>{
-    return this.http.get(`${this.getproductById}`,{responseType:'json'});
+  //   return this.http.post('http://localhost:8083/flipkart/addToCart?emailId='+emailId+'&productId='+productId);
+  // }
 
-  }
+public addToCart(emailId:string,productId:number):Observable<any>
+{
+  let params=new HttpParams()
+  .set('emailId',emailId)
+  .set('productId',productId)
+  return this.http.post('http://localhost:8083/flipkart/addToCart',{},{params});
+}
+public viewCart(emailId:string):Observable<any>
+{
+  return this.http.get('http://localhost:8080/flipkart/viewcart?emailId'+emailId);
+}
 
 
 }

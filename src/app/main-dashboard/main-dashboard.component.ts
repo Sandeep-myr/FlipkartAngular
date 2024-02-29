@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { RegistrationServiceService } from '../service/registration-service.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -9,6 +9,7 @@ import { error } from 'console';
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css',
 })
+
 export class MainDashboardComponent {
 selectedCategory: any;
 goToCart() {
@@ -34,7 +35,7 @@ logout() {
 constructor(
     private service: RegistrationServiceService,
     private router: Router,
-    private formBuilder: FormBuilder
+  
   ) { }
 
   
@@ -57,6 +58,7 @@ product = {
 
 
   //--------------------------------------------------------------------------------
+  //adding products
 
   saveProduct() {
     const adminString = sessionStorage.getItem('admin');
@@ -92,11 +94,7 @@ product = {
   }
 
   //---------------------------------------------------------------------------------------
- 
-  getProductByID(){
-   
 
-  }
 
 
 

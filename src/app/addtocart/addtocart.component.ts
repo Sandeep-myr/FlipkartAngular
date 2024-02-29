@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './addtocart.component.css'
 })
 export class AddtocartComponent {
+  constructor(){}
+
 
 }

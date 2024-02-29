@@ -11,6 +11,7 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -22,7 +23,6 @@ const routes: Routes = [
   {path:"register",component:RegistrationComponent},
   {path:"login",component:LoginComponent},
 
-  {path:'',component:HomepageComponent},
   {path:'specific-product/:productId',component:SpecificProductComponent},
   {
     path: '',
@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'main-dashboard',
     component: MainDashboardComponent,
+  },
+  {
+    path: 'viewcart',
+    component: ViewcartComponent,
   },
   // {
   //   path:'addtocart',

@@ -27,7 +27,8 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
-import { SearchComponent } from './search/search.component';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SearchComponent } from './search/search.component';
    AdminRegistrationComponent,
  
    AddtocartComponent,
-      SearchComponent
+      ViewcartComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,26 @@
   
    
   }
+
+  .categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .category {
+    background-color: #f0f0f0;
+  
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .category:hover {
+    background-color: #e0e0e0;
+  }
+  
   .main{
    
     margin-left:60px;
@@ -39,7 +59,7 @@
   }
   
   .card {
-    border: 1px solid #f0f0f0; /* Add border around each card */
+    /*border: 1px solid #f0f0f0;  Add border around each card */
     border-radius: 5px; /* Add border radius to cards */
     overflow: hidden; /* Hide overflow content */
   }
