@@ -1,1 +1,31 @@
-<p>viewcart works!</p>
+<!-- view-cart.component.html -->
+
+<div class="container">
+    <h1>View Cart</h1>
+    <div *ngFor="let cartItem of cartItems.productCartList" class="cart-item">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="img-div">
+            <img class="card-img-top" [src]="cartItem.imageUrl" alt="Product Image">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5 class="card-title">{{ cartItem.productName }}</h5>
+          <p class="card-text">{{ cartItem.description }}</p>
+          <p class="card-text">Qty: {{ cartItem.productQty}}</p>
+          <p class="card-text">Seller: {{ cartItem.seller }}</p>
+          <p class="card-text">Brand: {{ cartItem.brandName }}</p>
+          <p class="card-text">Price: <span class="actual-price">&#8377;{{ cartItem.productPrice }}</span></p>
+          <p class="card-text">Discounted Price: <span class="discount-price">&#8377;{{ calculateDiscountedPrice(cartItem) }}</span></p>
+        </div>
+        <div class="col-md-3">
+          <div class="quantity">
+            <button class="quantity-btn" (click)="decrementQuantity(cartItem)">-</button>
+            <span class="quantity-value">{{ cartItem.quantity }}</span>
+            <button class="quantity-btn" (click)="decrementQuantity(cartItem)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

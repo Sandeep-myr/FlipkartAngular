@@ -57,13 +57,13 @@ export class RegistrationServiceService {
   //   return this.http.post('http://localhost:8083/flipkart/addToCart?emailId='+emailId+'&productId='+productId);
   // }
 
-public addToCart(emailId:string,productId:number):Observable<any>
-{
-  let params=new HttpParams()
-  .set('emailId',emailId)
-  .set('productId',productId)
-  return this.http.post('http://localhost:8083/flipkart/addToCart',{},{params});
-}
+// public addToCart(emailId:string,productId:number):Observable<any>
+// {
+//   let params=new HttpParams()
+//   .set('emailId',emailId)
+//   .set('productId',productId)
+//   return this.http.post('http://localhost:8083/flipkart/addToCart',{},{params});
+// }
 public viewCart(emailId:string):Observable<any>
 {
   return this.http.get('http://localhost:8080/flipkart/viewcart?emailId'+emailId);

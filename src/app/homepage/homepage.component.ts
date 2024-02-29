@@ -16,6 +16,9 @@ export class HomepageComponent implements OnInit {
 categories: any;
 product:any[]=[];
 
+purchageQty={
+  productQty:1
+};
   
 
   public products: any;
@@ -56,13 +59,20 @@ msg:string='';
     
       message:any;
       statusupdate:boolean=false;
-
+emailId1:string='';
     AddToCart(product:any){
-      this.http.post('http://localhost:8083/flipkart/addToCart',product,{responseType:'text'}).subscribe((data:any)=>{
+    const customer = sessionStorage.getItem('customer');
+  
+    if(customer!=null){
+    const customerString = JSON.parse(customer);
+     this.emailId1=customerString.emailId;
+    }  
+  
+    this.http.post('http://localhost:8083/flipkart/addToCart?&productId='+product.productId+'&emailId='+this.emailId1,this.purchageQty,{responseType:'text'}).subscribe((data:any)=>{
         this.product=data;
       this.statusupdate=true;
       this.message=data;
-
+ 
       setTimeout(()=>{
         this.statusupdate=false;
       },5000)
@@ -72,13 +82,6 @@ msg:string='';
     }
 
 
-    ViewCart(product:any){
-      this.http.get('http://localhost:8080/flipkart/viewcart',product).subscribe((data:any)=>{
-        this.product=data;
-
-      },error=>{
-        console.log(error);
-      })
-    }
+  
 
 }
