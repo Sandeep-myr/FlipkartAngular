@@ -19,6 +19,7 @@ product:any[]=[];
   
 
   public products: any;
+ 
 
   constructor(private http: HttpClient, private specificProduct: SpecificProductComponent, private router: Router) { }
   ngOnInit(): void {

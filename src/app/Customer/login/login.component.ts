@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit
 {
 
+  visibleCustomerNav:boolean=false;
   customers=
   {
     
@@ -22,6 +23,9 @@ status: boolean=false;
 
 
   constructor(private loginService:CustomerApiService, private router:Router){}
+
+  
+
   email:any='';
   customer:any;
   mobileNumber:any;
@@ -40,6 +44,7 @@ this.email=null
     return this.loginService.LoginCustomer(this.email,this.customers.password,this.mobileNumber).subscribe((data:any)=>
     {
       this.customer=JSON.stringify(data);
+      this.visibleCustomerNav=true;
       sessionStorage.setItem('customer',this.customer);
       setTimeout(()=>{
         this.status=false;

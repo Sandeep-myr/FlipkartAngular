@@ -4,7 +4,7 @@
           <span style="font-family: 'Arial Black', Gadget, sans-serif;">Flipkart</span>
       </a>
       <div class="search-box">
-          <input class="form-control mr-sm-2"  (input)="search()"  [(ngModel)]="searchKey" type="search" placeholder="Search Arial...." aria-label="Search">
+          <input class="form-control mr-sm-2"  (input)="search()" name="fghn"  [(ngModel)]="searchKey" type="search" placeholder="Search Arial...." aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:grey;color:white" >Search</button>
          <div>
             <a [routerLink]="['/specific-product']"  >
@@ -28,22 +28,32 @@
                   <a class="nav-link" href="#">Deals</a>
               </li>
               
-              <li class="nav-item"  *ngIf="loginbtn">
-                  <a class="nav-link" routerLink="/login">Login</a>
+              <li class="nav-item"  *ngIf="loginbtn" >
+                  <a class="nav-link" routerLink="/login" (mouseover)="openflex()">Login</a>
 
               </li>
+
+              <!-- <select  *ngIf="open==='openflex'"  >
+                <option><a routerLink="">Login As Customer</a></option>
+                <option><a routerLink="">Login As Seller</a></option>
+                <option><a routerLink="">Login As Manager</a></option>
+              </select> -->
 
               <li class="nav-item" *ngIf="loginbtn">
                   <a class="nav-link" routerLink="/adminlogin">Admin Login</a>
               </li>
 
-              <li class="nav-item" *ngIf="!loginbtn">
-                <a class="nav-link" routerLink="/adminlogin">Admin Login</a>
-            </li>
-            <li class="nav-item" *ngIf="!loginbtn">
-                <a class="nav-link" routerLink="/adminlogin">Admin Login</a>
-            </li>
+             
               
+
+        
+                <li class="nav-item" *ngIf="">
+                    <a class="nav-link" routerLink="/"><i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/"><i class="bi bi-box-arrow-right"></i></a>
+                </li>
+       
             
               <!-- Add more options as needed -->
           </ul>
