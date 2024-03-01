@@ -1,5 +1,15 @@
 <app-navbar></app-navbar>
 <div class="container" class="main">
+
+
+  <div class="categories">
+    <button class="category" type="submit" (click)="ngOnInit()">All Category</button>
+    <div *ngFor="let category of categories" class="category"  >
+      
+      <div class="btncat" type="submit" (click)="fetchSpecificCategoryProduct(category.categoryName)">{{ category.categoryName }}</div>
+      </div>
+  </div>
+
   <div class="row" class="productdiv">
     <div class="alert alert-success" *ngIf="statusupdate">
       <strong> {{message}}</strong>

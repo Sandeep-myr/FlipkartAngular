@@ -12,6 +12,7 @@ export class ViewcartComponent implements OnInit {
   productCartList: any;
   emailId1: string = '';
   cartItems: any;
+value: any;
   
 
   constructor(private http: HttpClient) { }
@@ -37,12 +38,32 @@ export class ViewcartComponent implements OnInit {
     });
   }
 
-  incrementQuantity(product: any)
-   {
+  decrementQuantity(product: any) {
+  if(this.value==="minus"){
+   product.productQty-=1;
+  }else{
+
+  
+  product.productQty+=1;
+  }
+  const customer = sessionStorage.getItem('customer');
+  
+    if(customer!=null){
+    const customerString = JSON.parse(customer);
+     this.emailId1=customerString.emailId;
+    }  
+  
+    this.http.post('http://localhost:8083/flipkart/addToCart?&productId='+product.productId+'&emailId='+this.emailId1,this.purchageQty,{responseType:'text'}).subscribe((data:any)=>{
+       
+ 
+      
+      },error =>{
+        console.log(error);
+      })
     
- }
-  decrementQuantity(product: any)
-   {
+  }
+  purchageQty(arg0: string, purchageQty: any, arg2: { responseType: "text"; }) {
+    throw new Error('Method not implemented.');
   }
 
   calculateDiscountedPrice(product: any) {

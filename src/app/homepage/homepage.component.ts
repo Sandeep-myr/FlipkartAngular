@@ -42,11 +42,12 @@ purchageQty={
 
   }
  
-  // fetchSpecific(productId: any) {
-  //   this.specificProduct.fetchSepecificProduc(productId);
-  //   this.route.navigate(['./specifyProduct']);
+  showDropdown: boolean = false;
 
-  // }
+  // Method to toggle the display of the dropdown
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
 
 status:boolean=false;
 msg:string='';

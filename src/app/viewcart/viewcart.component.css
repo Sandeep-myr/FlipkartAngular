@@ -1,0 +1,17 @@
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.quantity-value {
+    margin: 0 10px;
+    font-size: 16px;
+}
