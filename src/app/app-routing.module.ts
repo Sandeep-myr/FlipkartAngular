@@ -11,7 +11,12 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+<<<<<<< HEAD
 import { ViewcartComponent } from './viewcart/viewcart.component';
+=======
+import { ViewcartComponent } from './viewcart/ViewcartComponent';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+>>>>>>> 9966705b58067a90e7bc437cc3ec427a92ebfaf4
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -45,10 +50,10 @@ const routes: Routes = [
     path: 'viewcart',
     component: ViewcartComponent,
   },
-  // {
-  //   path:'addtocart',
-  //   component:AddToCartComponent,
-  // },
+  {
+    path:'order-history',
+    component:OrderHistoryComponent,
+  },
 
   {
     path: 'admin-dashboard',

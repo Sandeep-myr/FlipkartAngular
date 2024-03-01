@@ -6,6 +6,7 @@ import { error } from 'console';
 
 
 
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -60,8 +61,10 @@ msg:string='';
     
       message:any;
       statusupdate:boolean=false;
-emailId1:string='';
-    AddToCart(product:any){
+       emailId1:string='';
+
+    AddToCart(product:any)
+    {
     const customer = sessionStorage.getItem('customer');
   
     if(customer!=null){

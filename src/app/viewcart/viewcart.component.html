@@ -8,6 +8,23 @@
         <div class="img-div">
           <img class="card-img-top" [src]="cartItem.imageUrl" alt="Product Image">
         </div>
+<<<<<<< HEAD
+        <div class="col-md-6">
+          <h5 class="card-title">{{ cartItem.productName }}</h5>
+          <p class="card-text">{{ cartItem.description }}</p>
+          <p class="card-text">Qty: {{ cartItem.productQty}}</p>
+          <p class="card-text">Seller: {{ cartItem.seller }}</p>
+          <p class="card-text">Brand: {{ cartItem.brandName }}</p>
+          <p class="card-text">Price: <span class="actual-price">&#8377;{{ cartItem.productPrice }}</span></p>
+          <p class="card-text">Discounted Price: <span class="discount-price">&#8377;{{ calculateDiscountedPrice(cartItem) }}</span></p>
+        </div>
+        <div class="col-md-3">
+          <div class="quantity">
+            <button class="quantity-btn" (click)="decrementQuantity(cartItem)">-</button>
+            <span class="quantity-value">{{ cartItem.quantity }}</span>s
+            <button class="quantity-btn" (click)="incrementQuantity(cartItem)">+</button>
+          </div>
+=======
       </div>
       <div class="col-md-6">
         <h5 class="card-title">{{ cartItem.productName }}</h5>
@@ -20,10 +37,18 @@
       </div>
       <div class="col-md-3">
         <div class="quantity">
+<<<<<<< HEAD
           <button class="quantity-btn" type="submit" (click)="decrementQuantity(cartItem, 'minus')">-</button>
           <span class="quantity-value">{{ cartItem.productQty }}</span>
           <button class="quantity-btn" type="submit" (click)="decrementQuantity(cartItem, 'plus')">+</button>
            </div>
+=======
+          <button class="quantity-btn" type="submit"  value="minus" [(ngModel)]="value" (click)="decrementQuantity(cartItem)">-</button>
+          <span class="quantity-value">{{ cartItem.quantity }}</span>
+          <button class="quantity-btn" type="submit"  value="plus" [(ngModel)]="value" (click)="decrementQuantity(cartItem)">+</button>
+>>>>>>> f47c1f5cd123291acbd3f33b1d233cecf34f598d
+        </div>
+>>>>>>> 9966705b58067a90e7bc437cc3ec427a92ebfaf4
       </div>
     </div>
   </div>

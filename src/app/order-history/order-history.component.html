@@ -1,0 +1,39 @@
+<body>
+    <h1>Order History</h1>
+    <div *ngFor="let order of orders">
+      <div>
+        <h2>Order Details</h2>
+        <p>Order Date: {{ order.orderDate }}</p>
+        <p>Total Payable Amount: {{ order.addToCartResponse.totalPayableAmount }}</p>
+        <p>Total Saving: {{ order.addToCartResponse.totalSaving }}</p>
+        <p>Total Bill Amount: {{ order.addToCartResponse.totalBillAmount }}</p>
+      </div>
+      <div>
+        <h2>Product Details</h2>
+        <div *ngFor="let product of order.addToCartResponse.productCartList">
+          <div>
+            <img [src]="product.imageUrl" alt="{{ product.productName }}">
+            <p>Product Name: {{ product.productName }}</p>
+            <p>Brand: {{ product.brandName }}</p>
+            <p>Description: {{ product.description }}</p>
+            <p>Quantity: {{ product.productQty }}</p>
+            <p>Price: {{ product.productPrice }}</p>
+            <p>Total Purchase Price: {{ product.totalProductPurchasePrice }}</p>
+            <p>Discount Amount: {{ product.discountAmount }}</p>
+            <p>After Discount Amount: {{ product.afterDiscountAmount }}</p>
+            <p>Seller: {{ product.sellerName }}</p>
+            <p>Order ID: {{ product.orderId }}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Address Details</h2>
+        <p>City: {{ order.addressReq.city }}</p>
+        <p>Street: {{ order.addressReq.street }}</p>
+        <p>State: {{ order.addressReq.state }}</p>
+        <p>Country: {{ order.addressReq.country }}</p>
+        <p>Zip Code: {{ order.addressReq.zipCode }}</p>
+      </div>
+      <hr>
+    </div>
+  </body>

@@ -52,6 +52,13 @@ export class RegistrationServiceService {
   public addProducts(data:any):Observable<any>{
     return this.http.post(`${this.addProdUrl}`,data ,{responseType:'text'});
   }
+  // public getProducts(data:any,emailId:string):Observable<any>{
+  //   return this.http.get('http://localhost:8080/flipkart/orderHistory?emailId='+emailId);
+  // }
+
+
+
+  
   // public addToCart(emailId:string,productId:number) : Observable<any>{
 
   //   return this.http.post('http://localhost:8083/flipkart/addToCart?emailId='+emailId+'&productId='+productId);
@@ -64,10 +71,10 @@ export class RegistrationServiceService {
 //   .set('productId',productId)
 //   return this.http.post('http://localhost:8083/flipkart/addToCart',{},{params});
 // }
-public viewCart(emailId:string):Observable<any>
-{
-  return this.http.get('http://localhost:8080/flipkart/viewcart?emailId'+emailId);
-}
+// public viewCart(emailId:string):Observable<any>
+// {
+//   return this.http.get('http://localhost:8080/flipkart/viewcart?emailId'+emailId);
+// }
 
 
 }

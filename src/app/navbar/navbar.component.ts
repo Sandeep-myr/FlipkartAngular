@@ -14,6 +14,7 @@ searchKey:any;
 loginbtn:boolean=true;
 openflex: any;
 open: any;
+history: any;
 
 
 constructor(private mains:HomepageComponent,private http:HttpClient){
@@ -21,8 +22,8 @@ constructor(private mains:HomepageComponent,private http:HttpClient){
 }
 
   search() {
-this.http.get('http://localhost:8083/flipkart/searchProduct?key='+this.searchKey,{responseType:'json'}).subscribe((data:any)=>{
-this.mains.products=data;
+   this.http.get('http://localhost:8083/flipkart/searchProduct?key='+this.searchKey,{responseType:'json'}).subscribe((data:any)=>{
+   this.mains.products=data;
 
 
 }
