@@ -63,7 +63,7 @@ throw new Error('Method not implemented.');
      this.emailId1=customerString.emailId;
     }  
   console.log(product.productQty)
-  this.purchageQty.productQty=product.productQty;
+  this.purchageQty=product.productQty;
   
   this.http.post('http://localhost:8083/flipkart/addToCart?&productId='+product.productId+'&emailId='+this.emailId1,this.purchageQty,{responseType:'text'}).subscribe((data:any)=>{
         
