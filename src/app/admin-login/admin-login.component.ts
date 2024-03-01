@@ -30,19 +30,30 @@ export class AdminLoginComponent {
 admin:any;
   loginAdmins(){
    
-    return this.service.loginAdmin(this.user.emailId,this.user.password).subscribe((data:any)=>
+ this.service.loginAdmin(this.user.emailId,this.user.password).subscribe((data:any)=>
       {
        console.log(this.user)
       this.admin  = JSON.stringify(data);
     sessionStorage.setItem('admin',this.admin);
     this.status=true;
-    this.msg='Login Successfully'
+    this.msg='Login Successfully 🤣🤣🤣🤣'
     
-    this.router.navigate(['./main-dashboard'])
+    setTimeout(()=>{
+      this.status=false;
+      this.router.navigate(['./main-dashboard'])
+    },3000);
+   
     
   },error=>{
     console.log(error);
-    this.router.navigate(['./main-dashboard'])
+    this.status=true;
+    this.msg='Invalid credentials Try Again 😒😒😒';
+    
+    setTimeout(()=>{
+      this.status=false;
+      this.router.navigate(['/']);
+    },4000);
+   
   });
 
   }

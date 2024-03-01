@@ -44,18 +44,15 @@ export class CustomerApiService
 
   changePassword(email: any, oldPassword: any, newPassword: any):Observable<string> {
     console.log(email,oldPassword,newPassword)
-    const params = {
-      emailId: email,
-      oldPassword: oldPassword,
-      newPassword: newPassword
-    };
-  return this.http.post(this.passwordchangeUrl,params,{responseType:'text'}).pipe
-  (
-    catchError(error=>{
-      console.log(error)
-      return throwError(error);
-    })
-  )
+    
+   return this.http.post(this.passwordchangeUrl+'?emailId='+email+'&oldPassword='+oldPassword+'&newPassword='+newPassword, {},{responseType:'text'});
+   //.pipe
+  // (
+  //   catchError(error=>{
+  //     console.log(error)
+  //     return throwError(error);
+  //   })
+  // )
   }
 }
 

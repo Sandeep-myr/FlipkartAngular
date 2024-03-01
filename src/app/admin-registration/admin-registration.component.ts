@@ -61,27 +61,35 @@ export class AdminRegistrationComponent {
   }
 
 
-  addAdmin(adminData: any) 
-  {
-    this.admins.push(adminData);
-  }
-
-  adminRegister()
-  {
-    alert(`register successful`);
-    this.admins.push(this.admins);
-  }
+  opens:boolean=false;
+  msg:any;
 
   saveAdmin()
   {
     console.log(this.admin)
-    return this.service.registerAdmin(this.admin).subscribe(data=>
+     this.service.registerAdmin(this.admin).subscribe((data:any)=>
       {
-        console.log(this.admin);
-  
-        return this.router.navigate(['./login'])
-      },error=>console.log(error));
-  }
+this.opens=true;
+this.msg=data;
+
+
+setTimeout(()=>{
+
+
+  this.router.navigate(['./adminlogin'])
+},5000)  
+
+      },error=>{
+
+        
+this.opens=true;
+this.msg=error;
+setTimeout(()=>{
+
+  this.router.navigate(['./'])
+},5000)
+      })
+      }
   
   }
 

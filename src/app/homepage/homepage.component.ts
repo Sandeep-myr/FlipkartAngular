@@ -3,6 +3,8 @@ import { Component, Injectable, Injector, OnInit, Output } from '@angular/core';
 import { SpecificProductComponent } from '../specific-product/specific-product.component';
 import { Router } from '@angular/router';
 import { error } from 'console';
+import { AlertComponent } from '../alert/alert.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -25,11 +27,11 @@ purchageQty={
   public products: any;
  
 
-  constructor(private http: HttpClient, private specificProduct: SpecificProductComponent, private router: Router) { }
+  constructor(private http: HttpClient, private specificProduct: SpecificProductComponent, private router: Router,private dialog: MatDialog) { }
   ngOnInit(): void {
     this.http.get('http://localhost:8083/flipkart/all/product', { responseType: 'json' }).subscribe((data: any) => {
       this.products = data;
-      
+    this.openAlertPopup('product added into cart')  
 
     }, error => {
       console.log(error);
@@ -66,11 +68,11 @@ msg:string='';
     AddToCart(product:any)
     {
     const customer = sessionStorage.getItem('customer');
-  
+  console.log(customer);
     if(customer!=null){
     const customerString = JSON.parse(customer);
      this.emailId1=customerString.emailId;
-    }  
+      
   
     this.http.post('http://localhost:8083/flipkart/addToCart?&productId='+product.productId+'&emailId='+this.emailId1,this.purchageQty,{responseType:'text'}).subscribe((data:any)=>{
         this.product=data;
@@ -83,9 +85,18 @@ msg:string='';
       },error =>{
         console.log(error);
       })
+
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
     }
 
-
+    openAlertPopup(message: string): void {
+      const dialogRef = this.dialog.open(AlertComponent, {
+        data: message
+      });
+    }
   
 
 }

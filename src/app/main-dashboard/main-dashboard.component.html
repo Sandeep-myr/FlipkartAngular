@@ -5,7 +5,7 @@
   </div>
   <div class="navbar-buttons">
     <button class="btn btn-primary" (click)="openForm()">Add Product</button>
-    <button class="btn btn-danger" (click)="logout()" routerLink="/login">Logout</button>
+    <button class="btn btn-danger" type="submit" (click)="logout()">Logout</button>
     <button class="btn btn-info" (click)="goToCart()">View Cart</button>
   </div>
 </div>
@@ -25,6 +25,7 @@
     </div>
 
     <div class="product-details">
+
       <div class="container">
         <h3>Product Details</h3>
         <div class="row">

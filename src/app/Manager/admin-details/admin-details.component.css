@@ -1,0 +1,55 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff; /* Header text color */
+    font-size: 28px; /* Increased font size */
+    font-family: Arial, sans-serif; /* Font family */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #007bff; /* Table border color */
+    border-radius: 10px; /* Border radius */
+    overflow: hidden; /* Hide overflow for border radius */
+    font-weight: bolder;
+  }
+  
+  .table th,
+  .table td {
+    padding: 15px; /* Increased padding */
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; /* Table cell border color */
+    font-size: 19px; /* Increased font size */
+    font-family: Arial, sans-serif; /* Font family */
+  color:rgb(252, 3, 44)  
+}
+  
+  .table th {
+    background-color: #007bff; /* Header background color */
+    color: #fff; /* Header text color */
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Even row background color */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #cce5ff; /* Hover row background color */
+  }
+  
+  /* Add alternating column colors */
+  .table tbody tr:nth-child(even) td {
+    background-color: #d9edf7; /* Even column background color */
+  }
+  
+  .table tbody tr:nth-child(odd) td {
+    background-color: #dff0d8; /* Odd column background color */
+  }
+  

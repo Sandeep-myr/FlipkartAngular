@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { error } from 'console';
-import { response } from 'express';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
+
 import { RegistrationServiceService } from '../service/registration-service.service';
 
 interface Product{
@@ -38,37 +39,28 @@ interface Order {
   addToCartResponse: AddToCartResponse;
   addressReq: Address;
 }
-
-
-  
-
 @Component({
   selector: 'app-order-history',
   templateUrl: './order-history.component.html',
   styleUrl: './order-history.component.css'
+  
 })
 export class OrderHistoryComponent implements OnInit {
-orders:any[]=[];
+  orderDetails:any;
 
-
-order:any
-
-orderDetails:any;
-userHistory: any[]=[];
+  review:any;
   emailId: any;
+  emailId1:any;
 
 constructor( private http:HttpClient ,private sevice:RegistrationServiceService){
 }
-history(){
-  // this.userHistory = history;
 
-}
 ngOnInit(): void {
- 
+ this.fetchOder();
 }
 
 
-fetchOder(data:any){
+fetchOder(){
   const customer = sessionStorage.getItem('customer');
   
     if(customer!=null){
@@ -76,17 +68,34 @@ fetchOder(data:any){
      this.emailId=customerString.emailId;
     }  
   
-  this.http.get('http://localhost:8080/flipkart/orderHistory?emailId='+this.emailId,{responseType:'json'}).subscribe(
-    (data)=>{
+  this.http.get('http://localhost:8083/flipkart/orderHistory?emailId='+this.emailId,{responseType:'json'}).subscribe(
+    (data:any)=>{
       
      this.orderDetails = data;
       console.log(this.orderDetails);
-     console.log('sdfghj');
+     
     },
     (error)=>{
       console.error('error fetching orders:',error);
     }
   );
+}
+
+reviews()
+{
+  this.http.post('http://localhost:8080/flipkart/order/review?emailId='+this.emailId1,{responseType:'json'}).subscribe(
+    (data:any)=>{
+      alert('your history');
+      this.review=data;
+      console.log('reviews');
+      
+    },
+    (error)=>{
+      console.error('error fetching',error);
+    }
+  );
+
+
 }
 
 }

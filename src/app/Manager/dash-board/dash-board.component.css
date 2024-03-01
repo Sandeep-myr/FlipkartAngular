@@ -1,0 +1,67 @@
+/* Container styles */
+.container {
+  margin: 20px auto;
+  max-width: 800px;
+  background-image: url('https://openup.com/wp-content/uploads/2022/04/betere-manager-tips.png');
+ text-decoration: none;
+}
+
+
+.container-fluid {
+  text-align: center;
+}
+
+/* Card styles */
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cover image styles */
+.cover-image {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.7; /* Reduced visibility */
+}
+
+/* Section styles */
+.about-section {
+  margin-top: 40px;
+  color: #333; /* Text color */
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-content {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Button styles */
+.p-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.p-button:hover {
+  background-color: #0056b3;
+}
+
+/* Navigation bar styles */
+.p-menubar {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 10px 20px;
+  border-radius: 5px;
+}

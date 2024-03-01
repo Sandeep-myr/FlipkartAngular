@@ -2,6 +2,7 @@
 <div class="container" class="main">
 
 
+
   <div class="categories">
     <button class="category" type="submit" (click)="ngOnInit()">All Category</button>
     <div *ngFor="let category of categories" class="category"  >
@@ -11,9 +12,7 @@
   </div>
 
   <div class="row" class="productdiv">
-    <div class="alert alert-success" *ngIf="statusupdate">
-      <strong> {{message}}</strong>
-    </div>
+    
     <div class="col-md-8 mb-4" *ngFor="let product of products">
       <div class="withbtn">
         <div class="product">
@@ -28,7 +27,7 @@
             <div class="discount">{{ product.discountPercentage }}% off</div>
 
             <div class="card-holder">
-              <h5 class="card-title"><strong>{{ product.productName |slice:0:20}}...</strong></h5>
+              <h5 class="card-title"><strong>{{ product.productName | slice:0:20}}...</strong></h5>
               <p class="card-text">{{ product.description | slice:0:20}}...</p>
               <p class="card-text">Seller: {{ product.seller }}</p>
               <p class="card-text">Brand: {{ product.brandName|slice:0:20 }}..</p>

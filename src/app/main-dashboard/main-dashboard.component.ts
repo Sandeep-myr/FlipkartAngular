@@ -16,8 +16,9 @@ goToCart() {
 
 }
 logout() {
-  alert('You Logged out ');
-  return this.router.navigate(['./adminlogin']);
+  console.log('ghj')
+  sessionStorage.removeItem('admin');
+  this.router.navigate(['/']);
 
 }
 

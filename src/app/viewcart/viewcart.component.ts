@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 @Component({
@@ -15,20 +15,19 @@ export class ViewcartComponent implements OnInit {
   productCartList: any;
   emailId1: string = '';
   cartItems: any;
+  addressData = {
+    city: '',
+    street: '',
+    state: '',
+    country: '',
+    zipCode: 0
+  };
 
-  addressForm: FormGroup;
   display: boolean = false;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(private http: HttpClient) {
 
-    this.addressForm = this.formBuilder.group({
-      city: ['', Validators.required],
-      street: ['', Validators.required],
-      state: ['', Validators.required],
-      country: ['', Validators.required],
-      zipCode: [0, Validators.required]
-    });
-
+   
   }
 
   ngOnInit(): void {
@@ -95,13 +94,7 @@ export class ViewcartComponent implements OnInit {
     this.display = true;
   }
   onSubmit() {
-    if (this.addressForm.valid) {
-    
-      console.log(this.addressForm.value);
-    } else {
-   
-      console.log('Form is invalid');
-    }
+  
   }
 
 

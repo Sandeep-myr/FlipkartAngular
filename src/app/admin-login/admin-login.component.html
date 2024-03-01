@@ -1,7 +1,9 @@
 <!-- //(ngSubmit)="login()"   #loginForm="ngForm" -->
 
  <div class="container">
-  <strong>{{msg}}</strong>
+  <div  class="alert alert-success" *ngIf="status">
+    <strong>{{msg}}</strong>
+    </div>
     <h2>Login</h2>
     <form  >
        
@@ -13,7 +15,7 @@
         <label for="password">Password:</label>
         <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
       </div>
-      <button type="submit" (click)="loginAdmins()" class="btn btn-primary" routerLink="" >Login</button>
+      <button type="submit" (click)="loginAdmins()" class="btn btn-primary"  >Login</button>
     </form>
   
     <hr>

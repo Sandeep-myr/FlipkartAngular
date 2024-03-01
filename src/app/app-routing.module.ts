@@ -6,7 +6,7 @@ import { LoginComponent } from './Customer/login/login.component';
 import { RegistrationComponent } from './Customer/registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -14,6 +14,13 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ViewcartComponent } from './viewcart/viewcart.component';
+import { ManagerLoginComponent } from './Manager/manager-login/manager-login.component';
+import { RegistrationManagerComponent } from './Manager/registration-manager/registration-manager.component';
+import { DashBoardComponent } from './Manager/dash-board/dash-board.component';
+import { AdminDetailsComponent } from './Manager/admin-details/admin-details.component';
+import { PendingStatusComponent } from './Manager/pending-status/pending-status.component';
+import { StatusComponent } from './Manager/status/status.component';
+import { ProfilePictureComponent } from './Manager/profile-picture/profile-picture.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -26,11 +33,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
 
   {path:'specific-product/:productId',component:SpecificProductComponent},
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
+ 
   {
     path: 'adminlogin',
     component: AdminLoginComponent,
@@ -52,16 +55,21 @@ const routes: Routes = [
     component:OrderHistoryComponent,
   },
 
-  {
-    path: 'admin-dashboard',
-    component: AdminDashboardComponent,
-  },
+  
+ 
 
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
+
+  {path:"manager-login",component:ManagerLoginComponent},
+  // {path:"",redirectTo:"manager-login",pathMatch:"full"},
+  {path:"registration-manager",component:RegistrationManagerComponent},
+  {path:"dashBoard",component:DashBoardComponent},
+  {path:"adminDetails", component:AdminDetailsComponent},
+  {path:"pendingStatus", component:PendingStatusComponent},
+  {path:"status",component:StatusComponent},
+  {path:"profilePicture",component:ProfilePictureComponent}
+
+
+
 ];
 
 @NgModule({
