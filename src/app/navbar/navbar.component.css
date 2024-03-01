@@ -1,4 +1,3 @@
-
 .navbar {
   background-color: #007bff !important; /* Blue background color */
 }
@@ -35,4 +34,37 @@
   .navbar-brand span {
       margin-right: auto; /* Push the span to the left on smaller devices */
   }
+}
+
+
+loginDiv a {
+  text-decoration: none;
+  
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background:blue;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background-color: black ; 
+  color: white;
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+.loginDiv{
+  color: black ;
+  font-family: Arial, Helvetica, sans-serif;
 }

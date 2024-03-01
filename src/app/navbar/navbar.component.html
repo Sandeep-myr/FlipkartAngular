@@ -1,59 +1,71 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-      <a class="navbar-brand" href="#">
-          <span style="font-family: 'Arial Black', Gadget, sans-serif;">Flipkart</span>
-      </a>
-      <div class="search-box">
-          <input class="form-control mr-sm-2"  (input)="search()" name="fghn"  [(ngModel)]="searchKey" type="search" placeholder="Search Arial...." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:grey;color:white" >Search</button>
-         <div>
-           
-         </div>
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <span style="font-family: 'Arial Black', Gadget, sans-serif;">Flipkart</span>
+        </a>
+        <div class="search-box">
+            <input class="form-control mr-sm-2" (input)="search()" name="fghn" [(ngModel)]="searchKey" type="search"
+                placeholder="Search Arial...." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                style="background-color:grey;color:white">Search</button>
+            <div>
+
+            </div>
         </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item ">
-                  <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" routerLink="/viewcart">View Cart</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Deals</a>
-              </li>
-              
-              <li class="nav-item"  *ngIf="loginbtn" >
-                  <a class="nav-link" routerLink="/login" (mouseover)="openflex()">Login</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/viewcart">View Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deals</a>
+                </li>
 
-              </li>
+                <li class="nav-item" *ngIf="loginbtn">
+                    <div class="loginDiv">
+                        <a href="#"><b>Login</b></a>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li><a routerLink="/login"> User Login</a></li>
+                                    <li><a routerLink="/adminlogin">Admin Login</a></li>
+                                    <li><a href="#">Manager Login</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-              <!-- <select  *ngIf="open==='openflex'"  >
+
+                </li>
+
+                <!-- <select  *ngIf="open==='openflex'"  >
                 <option><a routerLink="">Login As Customer</a></option>
                 <option><a routerLink="">Login As Seller</a></option>
                 <option><a routerLink="">Login As Manager</a></option>
               </select> -->
 
-              <li class="nav-item" *ngIf="loginbtn">
-                  <a class="nav-link" routerLink="/adminlogin">Admin Login</a>
-              </li>
-              <li class="nav-item" >
-                <a class="nav-link" routerLink="/order-history">History</a>
-            </li>
-               <li class="nav-item" *ngIf="">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/order-history">History</a>
+                </li>
+                <li class="nav-item" *ngIf="">
                     <a class="nav-link" routerLink="/"><i class="bi bi-person-bounding-box"></i></a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/"><i class="bi bi-box-arrow-right"></i></a>
                 </li>
-                
-       
-            
-              <!-- Add more options as needed -->
-          </ul>
-      </div>
-  </div>
+
+
+
+                <!-- Add more options as needed -->
+            </ul>
+        </div>
+    </div>
 </nav>
