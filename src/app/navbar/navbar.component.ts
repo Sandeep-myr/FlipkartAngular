@@ -15,6 +15,7 @@ loginbtn:boolean=true;
 openflex: any;
 open: any;
 history: any;
+productId: any;
 
 
 constructor(private mains:HomepageComponent,private http:HttpClient){

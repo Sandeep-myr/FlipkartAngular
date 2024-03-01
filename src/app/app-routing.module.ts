@@ -10,13 +10,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
-<<<<<<< HEAD
-import { ViewcartComponent } from './viewcart/viewcart.component';
-=======
-import { ViewcartComponent } from './viewcart/ViewcartComponent';
+
+
 import { OrderHistoryComponent } from './order-history/order-history.component';
->>>>>>> 9966705b58067a90e7bc437cc3ec427a92ebfaf4
+import { ViewcartComponent } from './viewcart/viewcart.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},

@@ -13,10 +13,12 @@
         <h5 class="card-title">{{ cartItem.productName }}</h5>
         <p class="card-text">{{ cartItem.description }}</p>
         <p class="card-text">Qty: {{ cartItem.productQty}}</p>
-        <p class="card-text">Seller: {{ cartItem.seller }}</p>
+        <p class="card-text">Seller: {{ cartItem.sellerName }}</p>
         <p class="card-text">Brand: {{ cartItem.brandName }}</p>
         <p class="card-text">Price: <span class="actual-price">&#8377;{{ cartItem.productPrice }}</span></p>
-        <p class="card-text">Discounted Price: <span class="discount-price">&#8377;{{ calculateDiscountedPrice(cartItem) }}</span></p>
+        <p class="card-text">Discounted Price: <span class="discount-price">&#8377;{{cartItem.discountAmount  }}</span></p>
+        <p class="card-text">Total Price: <span class="actual-price">&#8377;{{ cartItem.totalProductPurchasePrice }}</span></p>
+        <p class="card-text">Total Discount : <span class="discount-price">&#8377;{{cartItem.afterDiscountAmount  }}</span></p>
       </div>
       <div class="col-md-3">
         <div class="quantity">
@@ -34,4 +36,31 @@
     <p>Total Bill Amount: &#8377;{{ cartItems.totalBillAmount }}</p>
     <button type="submit"  class="btn btn-success checkout" (click)="checkout()">Checkout</button>
   </div>
+</div>
+
+
+<div class="container" *ngIf="display">
+  <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="mb-3">
+      <label for="city" class="form-label">City</label>
+      <input type="text" id="city" formControlName="city" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="street" class="form-label">Street</label>
+      <input type="text" id="street" formControlName="street" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="state" class="form-label">State</label>
+      <input type="text" id="state" formControlName="state" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Country</label>
+      <input type="text" id="country" formControlName="country" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="zipCode" class="form-label">Zip Code</label>
+      <input type="number" id="zipCode" formControlName="zipCode" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
