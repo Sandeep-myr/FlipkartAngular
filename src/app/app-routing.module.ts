@@ -11,7 +11,7 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
-import { ViewcartComponent } from './viewcart/ViewcartComponent';
+import { ViewcartComponent } from './viewcart/viewcart.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},

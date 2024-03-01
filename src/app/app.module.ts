@@ -27,7 +27,8 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
-import { ViewcartComponent } from './viewcart/ViewcartComponent';
+import { ViewcartComponent } from './viewcart/viewcart.component';
+
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { ViewcartComponent } from './viewcart/ViewcartComponent';
    AdminRegistrationComponent,
  
    AddtocartComponent,
-      ViewcartComponent,
+     ViewcartComponent,
    
   ],
   imports: [
