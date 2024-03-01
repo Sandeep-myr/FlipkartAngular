@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-viewcart',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewcart.component.css'] // Fix typo here
 })
 export class ViewcartComponent implements OnInit {
+
   productCartList: any;
   emailId1: string = '';
   cartItems: any;
@@ -14,7 +16,8 @@ export class ViewcartComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.ViewCart();
   }
 
@@ -34,8 +37,12 @@ export class ViewcartComponent implements OnInit {
     });
   }
 
-  decrementQuantity(product: any) {
-    // Implement decrement quantity logic here
+  incrementQuantity(product: any)
+   {
+    
+ }
+  decrementQuantity(product: any)
+   {
   }
 
   calculateDiscountedPrice(product: any) {

@@ -28,6 +28,10 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { ViewcartComponent } from './viewcart/ViewcartComponent';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 
 
 @NgModule({
@@ -49,6 +53,8 @@ import { ViewcartComponent } from './viewcart/ViewcartComponent';
  
    AddtocartComponent,
       ViewcartComponent,
+      
+      OrderHistoryComponent,
    
   ],
   imports: [
@@ -56,8 +62,10 @@ import { ViewcartComponent } from './viewcart/ViewcartComponent';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    
-    RouterModule
+    InputTextModule,
+    RouterModule,
+    InputGroupModule ,
+    InputGroupAddonModule
  
   ],
   providers: [
