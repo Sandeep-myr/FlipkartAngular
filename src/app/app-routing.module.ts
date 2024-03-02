@@ -19,7 +19,7 @@ import { RegistrationManagerComponent } from './Manager/registration-manager/reg
 import { DashBoardComponent } from './Manager/dash-board/dash-board.component';
 import { AdminDetailsComponent } from './Manager/admin-details/admin-details.component';
 import { PendingStatusComponent } from './Manager/pending-status/pending-status.component';
-import { StatusComponent } from './Manager/status/status.component';
+
 import { ProfilePictureComponent } from './Manager/profile-picture/profile-picture.component';
 
 const routes: Routes = [
@@ -56,17 +56,19 @@ const routes: Routes = [
     component:OrderHistoryComponent,
   },
 
-  
- 
-
-
   {path:"manager-login",component:ManagerLoginComponent},
   // {path:"",redirectTo:"manager-login",pathMatch:"full"},
+
   {path:"registration-manager",component:RegistrationManagerComponent},
+
   {path:"dashBoard",component:DashBoardComponent},
+
   {path:"adminDetails", component:AdminDetailsComponent},
+
   {path:"pendingStatus", component:PendingStatusComponent},
-  {path:"status",component:StatusComponent},
+
+
+
   {path:"profilePicture",component:ProfilePictureComponent}
 
 

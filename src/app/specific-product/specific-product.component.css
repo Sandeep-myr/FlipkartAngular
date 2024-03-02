@@ -12,6 +12,11 @@
   .reviews {
     margin-top: 20px;
   }
+  .cont{
+    display: flex;
+    justify-content: start;
+    gap:20px;
+  }
 
   .product{
     margin-left:60px;

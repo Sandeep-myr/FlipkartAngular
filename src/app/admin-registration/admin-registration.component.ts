@@ -17,10 +17,7 @@ export class AdminRegistrationComponent {
   password: string='';
   admins: any[] = [];
   currentUser:any;
-  registrationService: any;
 
-  showPermanentForm: boolean = true;
- 
   admin={
     adminName:'',
     adminAddresses:[
@@ -52,16 +49,7 @@ export class AdminRegistrationComponent {
   constructor(private router: Router,private service:RegistrationServiceService) 
   {}
 
-  togglePermanentForm() {
-    this.showPermanentForm = true;
-  }
-
-  toggleTemporaryForm() {
-    this.showPermanentForm = false;
-  }
-
-
-  opens:boolean=false;
+opens:boolean=false;
   msg:any;
 
   saveAdmin()

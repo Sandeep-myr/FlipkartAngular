@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit
    mobileNumber:''
   }
   CustomerDetails:any;
-msg: any;
-status: boolean=false;
+  msg: any;
+  status: boolean=false;
 
 
 
@@ -40,7 +40,8 @@ status: boolean=false;
     console.log(this.customers)
   if(this.email.match('@')){
 this.mobileNumber=null
-  }else{
+  }
+  else{
 this.mobileNumber=this.customers.mobileNumber;
 this.email=null
   }
@@ -49,7 +50,7 @@ this.email=null
     {
 
       this.status=true;
-this.msg='Login Successfull👍👍👍';
+      this.msg='Login Successfull👍👍👍';
       this.customer=JSON.stringify(data);
       this.visibleCustomerNav=true;
       sessionStorage.setItem('customer',this.customer);
@@ -60,7 +61,7 @@ this.msg='Login Successfull👍👍👍';
             },2000)
   
     },error=>{
-this.status=true;
+        this.status=true;
 this.msg=error.error.message;
 setTimeout(()=>{
   this.status=false;

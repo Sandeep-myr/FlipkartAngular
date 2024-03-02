@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-viewcart',
-  templateUrl: './viewcart.component.html',
+  templateUrl:'./viewcart.component.html',
   styleUrls: ['./viewcart.component.css'] // Fix typo here
 })
 export class ViewcartComponent implements OnInit {

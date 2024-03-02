@@ -3,7 +3,25 @@
 
 
       <div class="col-md-4">
-        <img src="{{ productResponse.imageUrl }}" alt="{{ productResponse.productName }}" class="img-fluid mb-3">
+        <div class="cont">
+          <img src="{{ productResponse.imageUrl }}" alt="{{ productResponse.productName }}" class="img-fluid mb-3">
+          <div class="product">
+            <h2>{{ productResponse.productName }}</h2>
+              <p><strong>Brand:</strong> {{ productResponse.brandName }}</p>
+              <p><strong >Price:</strong> &#8377;{{ productResponse.productPrice }}</p>
+              <p><strong>Discount:</strong> {{ productResponse.discountPercentage }}%</p>
+              <p><strong>Description:</strong> {{ productResponse.description }}</p>
+              <p> <span class="discount-price">&#8377;{{ productResponse.productPrice- (productResponse.productPrice*
+                  productResponse.discountPercentage)/100}}</span></p>
+              <h4>Star Rating:</h4>
+              <div class="star-rating">
+                  <span *ngFor="let _ of getStarRatingArray()" class="star">&#9733;</span>
+                </div>
+                <br>
+                <button class="btn"> Add To Cart</button>
+              </div> 
+        </div>
+        
         <div class="col-md-8">
        
           
@@ -23,21 +41,7 @@
           </div>
        
       </div>
-<div class="product">
-      <h2>{{ productResponse.productName }}</h2>
-        <p><strong>Brand:</strong> {{ productResponse.brandName }}</p>
-        <p><strong >Price:</strong> &#8377;{{ productResponse.productPrice }}</p>
-        <p><strong>Discount:</strong> {{ productResponse.discountPercentage }}%</p>
-        <p><strong>Description:</strong> {{ productResponse.description }}</p>
-        <p> <span class="discount-price">&#8377;{{ productResponse.productPrice- (productResponse.productPrice*
-            productResponse.discountPercentage)/100}}</span></p>
-        <h4>Star Rating:</h4>
-        <div class="star-rating">
-            <span *ngFor="let _ of getStarRatingArray()" class="star">&#9733;</span>
-          </div>
-          <br>
-          <button class="btn"> Add To Cart</button>
-        </div> 
+
     </div>
   </div>
  

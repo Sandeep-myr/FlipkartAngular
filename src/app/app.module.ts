@@ -38,7 +38,7 @@ import { DashBoardComponent } from './Manager/dash-board/dash-board.component';
 import { ManagerLoginComponent } from './Manager/manager-login/manager-login.component';
 import { PendingStatusComponent } from './Manager/pending-status/pending-status.component';
 import { RegistrationManagerComponent } from './Manager/registration-manager/registration-manager.component';
-import { StatusComponent } from './Manager/status/status.component';
+// import { StatusComponent } from './Manager/status/status.component';
 import { ProfilePictureComponent } from './Manager/profile-picture/profile-picture.component';
 import { ApiServiceService } from './Manager/service/api-service.service';
 import { ManagerProfileComponent } from './Manager/manager-profile/manager-profile.component';
@@ -64,13 +64,13 @@ import { ManagerProfileComponent } from './Manager/manager-profile/manager-profi
     ManagerLoginComponent,
     PendingStatusComponent,
     RegistrationManagerComponent,
-    StatusComponent,
+   
     ProfilePictureComponent,
     RegistrationManagerComponent,
     DashBoardComponent,
     AdminDetailsComponent,
     PendingStatusComponent,
-    StatusComponent,
+   
     ManagerLoginComponent,
     ProfilePictureComponent,
     ManagerProfileComponent,
