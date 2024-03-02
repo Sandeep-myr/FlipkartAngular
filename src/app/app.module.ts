@@ -42,7 +42,7 @@ import { StatusComponent } from './Manager/status/status.component';
 import { ProfilePictureComponent } from './Manager/profile-picture/profile-picture.component';
 import { ApiServiceService } from './Manager/service/api-service.service';
 import { ManagerProfileComponent } from './Manager/manager-profile/manager-profile.component';
-import { AlertComponent } from './alert/alert.component';
+
 
 @NgModule({
   declarations: [
@@ -74,7 +74,7 @@ import { AlertComponent } from './alert/alert.component';
     ManagerLoginComponent,
     ProfilePictureComponent,
     ManagerProfileComponent,
-    AlertComponent
+   
   ],
   imports: [
     BrowserModule,

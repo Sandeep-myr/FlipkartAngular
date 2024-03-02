@@ -4,12 +4,15 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 
 import { error } from 'console';
+import { NavbarComponent } from './navbar/navbar.component';
 @Injectable({
   providedIn: 'root',
 })
 export class CustomerApiService 
 {
  
+  
+
    registerUrl = 'http://localhost:8083/flipkart/customerRegistration';
    loginUrl='http://localhost:8083/flipkart/customerLogin';    
   passwordchangeUrl="http://localhost:8083/flipkart/password/change"

@@ -16,7 +16,7 @@ goToCart() {
 
 }
 logout() {
-  console.log('ghj')
+ 
   sessionStorage.removeItem('admin');
   this.router.navigate(['/']);
 

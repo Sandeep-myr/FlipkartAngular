@@ -24,6 +24,7 @@ import { ProfilePictureComponent } from './Manager/profile-picture/profile-pictu
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
+  
   {path:'specific-product/:productId',component:SpecificProductComponent},
   
   
