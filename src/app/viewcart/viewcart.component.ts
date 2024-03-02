@@ -15,24 +15,28 @@ export class ViewcartComponent implements OnInit {
   productCartList: any;
   emailId1: string = '';
   cartItems: any;
-  addressData = {
-    city: '',
-    street: '',
-    state: '',
-    country: '',
-    zipCode: 0
-  };
 
+  addressForm: FormGroup;
   display: boolean = false;
+  
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
 
-   
+    this.addressForm = this.formBuilder.group({
+      city: ['', Validators.required],
+      street: ['', Validators.required],
+      state: ['', Validators.required],
+      country: ['', Validators.required],
+      zipCode: [0, Validators.required]
+    });
+
   }
 
   ngOnInit(): void {
 
     this.ViewCart();
+    this.checkout();
+    this.closeRegistration();
 
 
 
@@ -91,11 +95,33 @@ export class ViewcartComponent implements OnInit {
 
 
   checkout() {
-    this.display = true;
+    
+    const model=document.getElementById('myModal');
+    if(model!=null){
+      model.style.display='block';
+    }
+    this.display=true;
+    
+  }
+  closeRegistration(){
+    const model=document.getElementById('myModal');
+    if(model!=null){
+      model.style.display='none';
+    }
   }
   onSubmit() {
-  
+    if (this.addressForm.valid) {
+    
+      console.log(this.addressForm.value);
+    } else {
+   
+      console.log('Form is invalid');
+    }
   }
+  
+
+
+
 
 
 
