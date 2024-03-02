@@ -1,8 +1,8 @@
-/* Container styles */
+/* Container styles
 .container {
   margin: 20px auto;
   max-width: 800px;
-  background-image: url('https://openup.com/wp-content/uploads/2022/04/betere-manager-tips.png');
+
  text-decoration: none;
 }
 
@@ -11,25 +11,24 @@
   text-align: center;
 }
 
-/* Card styles */
+
 .card {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.8); 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Cover image styles */
 .cover-image {
   width: 100%;
   border-radius: 10px;
-  opacity: 0.7; /* Reduced visibility */
+  opacity: 0.7; 
 }
 
-/* Section styles */
+
 .about-section {
   margin-top: 40px;
-  color: #333; /* Text color */
+  color: #333; 
 }
 
 .section-heading {
@@ -43,7 +42,6 @@
   line-height: 1.6;
 }
 
-/* Button styles */
 .p-button {
   background-color: #007bff;
   color: #fff;
@@ -59,9 +57,26 @@
   background-color: #0056b3;
 }
 
-/* Navigation bar styles */
+
 .p-menubar {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); 
   border-radius: 5px;
+} */
+.profile-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.profile-button img {
+  width: 50px; /* Adjust the size of the profile picture */
+  height: 50px; 
+  border-radius: 50%; 
+}
+
+
+.profile-button:hover {
+  background-color: #f0f0f0; 
 }

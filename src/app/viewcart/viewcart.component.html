@@ -1,68 +1,109 @@
+<div class="main_div" style="display: flex;width: 100%;">
+  <div class="left_div" style="padding: 20px;width: 1000px;;">
+      <h1 style="text-align: center;">View Cart</h1>
+      <div *ngFor="let cartItem of cartItems.productCartList" style="border: 2px solid rgb(118, 114, 114);padding: 20px;margin-bottom: 10px;" >
+          <div style="display: flex;">
+              
+              <div class="imgs">
+                  <div class="img-div">
+                      <img class="card-img-top" [src]="cartItem.imageUrl" alt="Product Image">
+                  </div>
+              </div>
+              
+              <div class="product_details">
+                  <div >
+                      <h5 class="card-title">{{ cartItem.productName }}</h5>
+                      <p class="card-text">{{ cartItem.description }}</p>
+                      <p class="card-text">Qty: {{ cartItem.productQty}}</p>
+                      <p class="card-text">Seller: {{ cartItem.sellerName }}</p>
+                      <p class="card-text">Brand: {{ cartItem.brandName }}</p>
+                      <p class="card-text">Price: <span class="actual-price">&#8377;{{ cartItem.productPrice
+                              }}</span></p>
+                      <p class="card-text">Discounted Price: <span
+                              class="discount-price">&#8377;{{cartItem.discountAmount
+                              }}</span></p>
+                      <p class="card-text">Total Price: <span class="actual-price">&#8377;{{
+                              cartItem.totalProductPurchasePrice
+                              }}</span></p>
+                      <p class="card-text">Total Discount : <span
+                              class="discount-price">&#8377;{{cartItem.afterDiscountAmount
+                              }}</span></p>
+                  </div>
+              </div>
+          </div>
+          <div class="incre" style="margin-top: 20px;margin-left: 50%;">
+              <div class="quantity">
+                  <button class="quantity-btn" type="submit"
+                      (click)="decrementQuantity(cartItem, 'minus')" style="padding: 10px;border-radius: 50%;font-size: 1rem;background-color: rgb(31, 158, 178);border: none;">--</button>
+                  <span class="quantity-value">{{ cartItem.productQty }}</span>
+                  <button class="quantity-btn" type="submit" style="padding: 10px;border-radius: 50%;font-size: 1rem;background-color: rgb(31, 158, 178);border: none;"
+                      (click)="decrementQuantity(cartItem, 'plus')">+</button>
+              </div>
+          </div>
+
+      </div>
+  </div>
+  <!-- Total Bill -->
+  <div class="right_div" style="margin: 70px ;padding: 10px;">
+      <div class="total-bill">
+          <h3>Total Bill</h3>
+          <p>Total Payable Amount: &#8377;{{cartItems.totalPayableAmount }}</p>
+          <p>Total Saving: &#8377;{{ cartItems.totalSaving }}</p>
+          <p>Total Bill Amount: &#8377;{{ cartItems.totalBillAmount }}</p>
+          <button type="submit" class="btn btn-success checkout" (click)="checkout()">Checkout</button>
+      </div>
+  </div>
+</div>
 
 
-<div class="container">
-  <h1>View Cart</h1>
-  <div *ngFor="let cartItem of cartItems.productCartList" class="cart-item">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="img-div">
-          <img class="card-img-top" [src]="cartItem.imageUrl" alt="Product Image">
+
+
+
+<div style="margin-left: 70%;">
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+     
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeRegistration()"></button>
+      </div>
+
+    
+      <div class="modal-body">
+        <div class="container" *ngIf="display">
+          <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="mt-4">
+            <div class="col-mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" id="city" formControlName="city" class="form-control">
+            </div>
+            <div class="col-mb-3">
+              <label for="street" class="form-label">Street</label>
+              <input type="text" id="street" formControlName="street" class="form-control">
+            </div>
+            <div class="col-mb-3">
+              <label for="state" class="form-label">State</label>
+              <input type="text" id="state" formControlName="state" class="form-control">
+            </div>
+            <div class="col-mb-3">
+              <label for="country" class="form-label">Country</label>
+              <input type="text" id="country" formControlName="country" class="form-control">
+            </div>
+            <div class="col-mb-3">
+              <label for="zipCode" class="form-label">Zip Code</label>
+              <input type="number" id="zipCode" formControlName="zipCode" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+              (click)="closeRegistration()">Close</button>
+          </div>
+
         </div>
       </div>
-      <div class="col-md-6">
-        <h5 class="card-title">{{ cartItem.productName }}</h5>
-        <p class="card-text">{{ cartItem.description }}</p>
-        <p class="card-text">Qty: {{ cartItem.productQty}}</p>
-        <p class="card-text">Seller: {{ cartItem.sellerName }}</p>
-        <p class="card-text">Brand: {{ cartItem.brandName }}</p>
-        <p class="card-text">Price: <span class="actual-price">&#8377;{{ cartItem.productPrice }}</span></p>
-        <p class="card-text">Discounted Price: <span class="discount-price">&#8377;{{cartItem.discountAmount  }}</span></p>
-        <p class="card-text">Total Price: <span class="actual-price">&#8377;{{ cartItem.totalProductPurchasePrice }}</span></p>
-        <p class="card-text">Total Discount : <span class="discount-price">&#8377;{{cartItem.afterDiscountAmount  }}</span></p>
-      </div>
-      <div class="col-md-3">
-        <div class="quantity">
-          <button class="quantity-btn" type="submit" (click)="decrementQuantity(cartItem, 'minus')">-</button>
-          <span class="quantity-value">{{ cartItem.productQty }}</span>
-          <button class="quantity-btn" type="submit" (click)="decrementQuantity(cartItem, 'plus')">+</button>
-           </div>
-      </div>
     </div>
   </div>
-  <div class="total-bill">
-    <h3>Total Bill</h3>
-    <p>Total Payable Amount: &#8377;{{cartItems.totalPayableAmount }}</p>
-    <p>Total Saving: &#8377;{{ cartItems.totalSaving }}</p>
-    <p>Total Bill Amount: &#8377;{{ cartItems.totalBillAmount }}</p>
-    <button type="submit"  class="btn btn-success checkout" (click)="checkout()">Checkout</button>
-  </div>
-</div>
-
-
-<div class="container" *ngIf="display">
-  <form  class="mt-4">
-    <div class="mb-3">
-      <label for="street" class="form-label">Street</label>
-      <input type="text" id="street" placeholder="street" name="street" [(ngModel)]="addressData.street" class="form-control">
-    </div>
-    <div class="mb-3">
-
-      <label for="city" class="form-label"  >City</label>
-      <input type="text" id="city" placeholder="city" name="city" [(ngModel)]="addressData.city" class="form-control">
-    </div>
-   
-    <div class="mb-3">
-      <label for="state" class="form-label">State</label>
-      <input type="text" id="state" placeholder="state" name="state" [(ngModel)]="addressData.state" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="country" class="form-label">Country</label>
-      <input type="text" id="country" placeholder="country" name="country" [(ngModel)]="addressData.country" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="zipCode" class="form-label">Zip Code</label>
-      <input type="number" id="zipCode" placeholder="zipcode" name="zipCode" [(ngModel)]="addressData.zipCode" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-primary" click="submit()">Submit</button>
-  </form>
-</div>
