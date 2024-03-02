@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerApiService } from '../../customer-api.service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,8 @@ msg: any;
 status: boolean=false;
 
 
+
+
   constructor(private loginService:CustomerApiService, private router:Router){}
 
   
@@ -29,6 +32,7 @@ status: boolean=false;
   email:any='';
   customer:any;
   mobileNumber:any;
+  success:boolean=true;
   Login()
   {
 
@@ -41,14 +45,19 @@ this.mobileNumber=this.customers.mobileNumber;
 this.email=null
   }
 
-    return this.loginService.LoginCustomer(this.email,this.customers.password,this.mobileNumber).subscribe((data:any)=>
+     this.loginService.LoginCustomer(this.email,this.customers.password,this.mobileNumber).subscribe((data:any)=>
     {
+
+      this.status=true;
+this.msg='Login Successfull👍👍👍';
       this.customer=JSON.stringify(data);
       this.visibleCustomerNav=true;
       sessionStorage.setItem('customer',this.customer);
       setTimeout(()=>{
         this.status=false;
-            },9000)
+        
+        this.router.navigate(['/'], { queryParams: { success: this.success } });
+            },2000)
   
     },error=>{
 this.status=true;

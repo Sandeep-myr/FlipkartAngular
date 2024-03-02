@@ -3,7 +3,7 @@ import { Component, Injectable, Injector, OnInit, Output } from '@angular/core';
 import { SpecificProductComponent } from '../specific-product/specific-product.component';
 import { Router } from '@angular/router';
 import { error } from 'console';
-import { AlertComponent } from '../alert/alert.component';
+
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -31,8 +31,7 @@ purchageQty={
   ngOnInit(): void {
     this.http.get('http://localhost:8083/flipkart/all/product', { responseType: 'json' }).subscribe((data: any) => {
       this.products = data;
-    this.openAlertPopup('product added into cart')  
-
+  
     }, error => {
       console.log(error);
     });
@@ -92,11 +91,8 @@ msg:string='';
     }
     }
 
-    openAlertPopup(message: string): void {
-      const dialogRef = this.dialog.open(AlertComponent, {
-        data: message
-      });
-    }
+    
+   
   
 
 }

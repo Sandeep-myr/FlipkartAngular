@@ -21,15 +21,13 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/viewcart">View Cart</a>
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link" href="#">Deals</a>
                 </li>
 
                 <li class="nav-item" *ngIf="loginbtn">
-                    <div class="loginDiv">
+                    <div class="loginDiv" *ngIf="!success">
                         <a href="#"><b>Login</b></a>
                         <ul>
                             <li>
@@ -51,10 +49,21 @@
                 <option><a routerLink="">Login As Manager</a></option>
               </select> -->
 
+        
 
-                <li class="nav-item">
+                <li class="nav-item"   *ngIf="success">
                     <a class="nav-link" routerLink="/order-history">History</a>
                 </li>
+
+                <li class="nav-item"   *ngIf="success">
+                    <a class="nav-link" routerLink="/viewcart">View Cart</a>
+                </li>
+            
+
+                <li class="nav-item"   *ngIf="success">
+                    <a class="nav-link" (click)="logout()">Logout</a>
+                </li>
+            
                 <li class="nav-item" *ngIf="">
                     <a class="nav-link" routerLink="/"><i class="bi bi-person-bounding-box"></i></a>
                 </li>
