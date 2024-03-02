@@ -76,8 +76,8 @@ export class DashBoardComponent implements OnInit {
 }
 
   showDialog(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      const model = document.getElementById('myModal');
+    
+      const model = document.getElementById('myModal12');
       if (model != null) {
         model.style.display = 'block';
       }
@@ -85,13 +85,13 @@ export class DashBoardComponent implements OnInit {
       const storeData = sessionStorage.getItem('manager');
       if (storeData) {
         this.userData = JSON.parse(storeData);
-      }
+      
     }
   }
 
   closeRegistration(): void {
     if (isPlatformBrowser(this.platformId)) {
-      const model = document.getElementById('myModal');
+      const model = document.getElementById('myModal12');
       if (model != null) {
         model.style.display = 'none';
       }

@@ -2,45 +2,68 @@
   <div class="card">
     <p-menubar [model]="items">
       <ng-template pTemplate="end">
-        <p-button type="button" (click)="showDialog()" icon="pi pi-user"></p-button>
+        <button type="button" class="profile-button" (click)="showDialog()">
+          <img src="assets/115893.png" alt="Profile Picture">
+        </button>
+        
+        <div class="modal" id="myModal12">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeRegistration()"></button>
+              </div>
+              <div class="modal-body">
+                <div style="margin-left: 35px;">
+                <app-manager-profile></app-manager-profile>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeRegistration()">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </ng-template>
     </p-menubar>
+  
+    </div>
   </div>
   
+
+<div class="container about-section">
+  <img src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg"
+    style="height: 100%; width: 100%;"><img>
 </div>
+
 
 <div class="container about-section">
   <h1 class="section-heading">ABOUT PAGE</h1>
   <p class="section-content">
     <b>
-    OVER 40 YEARS OF EXPERIENCE
-    Our Story
-    With a career in the construction industry spanning over 40 years, the founder of Project On Track, Mr. Raju,
-    has extensive experience managing and handling large and complex projects of a multidiscipline nature.
-    Raju used conventional tools and systems through a manual process to track construction management tasks. Soon,
-    he realized that there could be a better way to manage construction using technology. So, he started identifying
-    opportunities to digitize various parts of the construction business. With the belief that this could
-    revolutionize the construction industry, he formulated a company and began developing software with over 20
-    highly skilled developers.
-    After years of development and testing, we have evolved Project on Track software. We believe this is the most
-    powerful software for managing workflow in the construction industry. With role-based security access, users can
-    decide who gets access to which modules. In addition, being in the cloud, this software provides access to
-    real-time data anytime, anywhere in the world. Using this software, you can mitigate risks and save money by
-    taking corrective action earlier in the process.
-    As a company, we are dedicated to providing world-class support to our clients. With teams spread across the
-    globe, we can help our clients in different time zones. In addition, with great technology partners on board, we
-    are developing video-based software tutorials, so everyone can take advantage of learning this software at their
-    own pace, from the comfort of their own home.
-    With Project on Track, we assist our customers in remaining ahead of the competition by managing their projects
-    from start to end through a cloud-based, integrated construction management platform in a multi-user
-    environment. Our innovative and unique software provides easy-to-use business tools and solutions that connect
-    your field operations and office in real-time. We have headquarters in Sydney, Australia, and a support office
-    in India, and we are serving our customers across the globe.
-  </b>
-</p>
-</div>
-
-<div class="col-mb-6 " style="margin-left: 80%;">
-  <app-manager-profile></app-manager-profile>
-</div>
-
+      OVER 40 YEARS OF EXPERIENCE
+      Our Story
+      With a career in the construction industry spanning over 40 years, the founder of Project On Track, Mr. Raju,
+      has extensive experience managing and handling large and complex projects of a multidiscipline nature.
+      Raju used conventional tools and systems through a manual process to track construction management tasks. Soon,
+      he realized that there could be a better way to manage construction using technology. So, he started identifying
+      opportunities to digitize various parts of the construction business. With the belief that this could
+      revolutionize the construction industry, he formulated a company and began developing software with over 20
+      highly skilled developers.
+      After years of development and testing, we have evolved Project on Track software. We believe this is the most
+      powerful software for managing workflow in the construction industry. With role-based security access, users can
+      decide who gets access to which modules. In addition, being in the cloud, this software provides access to
+      real-time data anytime, anywhere in the world. Using this software, you can mitigate risks and save money by
+      taking corrective action earlier in the process.
+      As a company, we are dedicated to providing world-class support to our clients. With teams spread across the
+      globe, we can help our clients in different time zones. In addition, with great technology partners on board, we
+      are developing video-based software tutorials, so everyone can take advantage of learning this software at their
+      own pace, from the comfort of their own home.
+      With Project on Track, we assist our customers in remaining ahead of the competition by managing their projects
+      from start to end through a cloud-based, integrated construction management platform in a multi-user
+      environment. Our innovative and unique software provides easy-to-use business tools and solutions that connect
+      your field operations and office in real-time. We have headquarters in Sydney, Australia, and a support office
+      in India, and we are serving our customers across the globe.
+    </b>
+  </p>

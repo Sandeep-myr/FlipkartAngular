@@ -3,13 +3,13 @@
       <h1 style="text-align: center;">View Cart</h1>
       <div *ngFor="let cartItem of cartItems.productCartList" style="border: 2px solid rgb(118, 114, 114);padding: 20px;margin-bottom: 10px;" >
           <div style="display: flex;">
-              <!-- Images -->
+              
               <div class="imgs">
                   <div class="img-div">
                       <img class="card-img-top" [src]="cartItem.imageUrl" alt="Product Image">
                   </div>
               </div>
-              <!-- Product Details -->
+              
               <div class="product_details">
                   <div >
                       <h5 class="card-title">{{ cartItem.productName }}</h5>
@@ -59,45 +59,45 @@
 
 
 
-<!-- The Modal -->
+<div style="margin-left: 70%;">
 <div class="modal" id="myModal">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
 
-      <!-- Modal Header -->
+     
       <div class="modal-header">
         <h4 class="modal-title">Modal Heading</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeRegistration()"></button>
       </div>
 
-      <!-- Modal body -->
+    
       <div class="modal-body">
         <div class="container" *ngIf="display">
           <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="mt-4">
-            <div class="col-mb-6">
+            <div class="col-mb-3">
               <label for="city" class="form-label">City</label>
               <input type="text" id="city" formControlName="city" class="form-control">
             </div>
-            <div class="col-mb-6">
+            <div class="col-mb-3">
               <label for="street" class="form-label">Street</label>
               <input type="text" id="street" formControlName="street" class="form-control">
             </div>
-            <div class="col-mb-6">
+            <div class="col-mb-3">
               <label for="state" class="form-label">State</label>
               <input type="text" id="state" formControlName="state" class="form-control">
             </div>
-            <div class="col-mb-6">
+            <div class="col-mb-3">
               <label for="country" class="form-label">Country</label>
               <input type="text" id="country" formControlName="country" class="form-control">
             </div>
-            <div class="col-mb-6">
+            <div class="col-mb-3">
               <label for="zipCode" class="form-label">Zip Code</label>
               <input type="number" id="zipCode" formControlName="zipCode" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
 
-          <!-- Modal footer -->
+        
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
               (click)="closeRegistration()">Close</button>
@@ -106,3 +106,4 @@
         </div>
       </div>
     </div>
+  </div>
